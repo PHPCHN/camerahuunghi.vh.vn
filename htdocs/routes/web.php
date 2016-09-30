@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+  'as' => 'user.index',
+  'uses' => 'HomeController@index',
+]);
 
 require __DIR__.'/user.php';
 require __DIR__.'/admin.php';

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Session;
+
 class HomeController extends Controller
 {
     /**
@@ -13,9 +15,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $search = $request->input('search');
+        if('search')
+            Session::put('search', $search);
+        return view('home');
     }
 
     /**
