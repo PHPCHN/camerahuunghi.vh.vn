@@ -17,11 +17,15 @@ class CreateProductsTable extends Migration
           $table->increments('id');
           $table->string('name');
           $table->text('description');
-          $table->integer('cate_id');
-          $table->float('price');
+          $table->text('content');
+          $table->double('price');
           $table->string('image');
-          $table->string('color');
           $table->string('code');
+          $table->boolean('top');
+          $table->boolean('new');
+          $table->boolean('pro');
+          $table->boolean('home');
+          $table->integer('cate_id');
           $table->softDeletes();
           $table->timestamps();
         });

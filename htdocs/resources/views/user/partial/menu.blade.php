@@ -7,23 +7,23 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
         </button>
-        <form class="search-box">
+        <form class="search-box" method="get" action="/">
           <input class="form-control" type="text" name="search">
         </form>
     </div>
     <div class="navbar-collapse collapse" id="menu">
       <ul class="nav">
         <li class="search-box hidden-xs">
-          <form>
+          <form method="get" action="/">
             <input class="form-control" type="text" name="search">
           </form>
         </li>
-        <li class="item"><a href="#" >CAMERA</a></li>
-        <li class="item"><a href="#" >ĐẦU GHI</a></li>
-        <li class="item"><a href="#" >BÁO TRỘM</a></li>
-        <li class="item"><a href="#" >BỘ ĐÀM</a></li>
-        <li class="item"><a href="#" >CHUÔNG CỬA</a></li>
-        <li class="item"><a href="#" >PHỤ KIỆN</a></li>
+        <li class="item"><a href="/camera" >CAMERA</a></li>
+        <li class="item"><a href="/dau-ghi" >ĐẦU GHI</a></li>
+        <li class="item"><a href="/bao-trom" >BÁO TRỘM</a></li>
+        <li class="item"><a href="/bo-dam" >BỘ ĐÀM</a></li>
+        <li class="item"><a href="/chuong-cua" >CHUÔNG CỬA</a></li>
+        <li class="item"><a href="/phu-kien" >PHỤ KIỆN</a></li>
       </ul>
     </div>
   </div>

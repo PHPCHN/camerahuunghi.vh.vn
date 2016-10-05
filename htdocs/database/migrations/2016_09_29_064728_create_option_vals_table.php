@@ -16,6 +16,7 @@ class CreateOptionValsTable extends Migration
         Schema::create('option_vals', function (Blueprint $table) {
           $table->increments('id');
           $table->string('label');
+          $table->string('keyword');
           $table->integer('opt_id');
           $table->softDeletes();
           $table->timestamps();

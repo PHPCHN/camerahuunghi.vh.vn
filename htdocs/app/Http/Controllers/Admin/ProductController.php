@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Product;
+
 class ProductController extends BaseAdminController
 {
     /**
@@ -26,7 +28,7 @@ class ProductController extends BaseAdminController
      */
     public function create()
     {
-        //
+        return view('admin.product.create');
     }
 
     /**
@@ -37,7 +39,12 @@ class ProductController extends BaseAdminController
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        if ($request->hasFile('image')) {
+            $data['image'] = $this->imageUpload('product', $request->file('image'));
+        } else $data['image'] = '';
+        Product::create($data);
+        return redirect()->route('product.create');
     }
 
     /**

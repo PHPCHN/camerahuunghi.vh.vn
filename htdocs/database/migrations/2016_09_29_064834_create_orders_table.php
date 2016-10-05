@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
           $table->string('phone');
           $table->string('address');
           $table->text('comment');
-          $table->float('price');
+          $table->double('price');
           $table->softDeletes();
           $table->timestamps();
         });

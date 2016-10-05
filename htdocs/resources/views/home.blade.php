@@ -8,193 +8,69 @@ CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
 @section('content')
 <div class="product row">
   <h6>TOP BÁN CHẠY NHẤT</h6>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-</div>
-<div class="product row">
-  <h6>CAMERA</h6>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-</div>
-<div class="product row">
-  <h6>ĐẦU GHI</h6>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-</div>
-<div class="product row">
-  <h6>BÁO TRỘM</h6>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-</div>
-<div class="product row">
-  <h6>BỘ ĐÀM</h6>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-</div>
-<div class="product row">
-  <h6>CHUÔNG CỬA</h6>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-</div>
-<div class="product row">
-  <h6>PHỤ KIỆN</h6>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-  <div class="item col-xs-6 col-sm-2">
-  </div>
-</div>
-@endsection
-@section('extra')
-<div class="extra row">
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
+  @foreach (Session::get('top_products') as $product)
+  <div class="item col-xs-6 col-sm-2">
+    <div class="p1 row">
+      <div class="img">
+        <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
+      </div>
+      <p>{{$product->name}}<p>
+      <p class="code">{{$product->code}}</p>
+      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <form method="get" class="exp" action="/{{$product->link}}">
+      <button type="submit" class="btn btn-warning">Chi tiết</button>
+      </form>
+    </div>
+    <div class="p2 row">
+      <p class="code">{{$product->code}}</p>
+      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <div class="description"><?=$product->description ?></div>
+      <form method="get" class="exp" action="/{{$product->link}}">
+      <button type="submit" class="btn btn-warning">Chi tiết</button>
+      </form>
     </div>
   </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
+  @endforeach
 </div>
+<?php $mcates = [
+  'camera' => 'CAMERA',
+  'dau-ghi' => 'ĐẦU GHI',
+  'bao-trom' => 'BÁO TRỘM',
+  'bo-dam' => 'BỘ ĐÀM',
+  'chuong-cua' => 'CHUÔNG-CỬA',
+  'phu-kien' => 'PHỤ KIỆN',
+];
+$main_products = Session::get('main_products'); ?>
+@foreach ($mcates as $key=>$value)
+<div class="product row">
+  <h6>{{$value}}</h6>
+  @if(isset($main_products[$key]))
+  @foreach ($main_products[$key] as $product)
+  <div class="item col-xs-6 col-sm-2">
+    <div class="p1 row">
+      <div class="img">
+        <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
+      </div>
+      <p>{{$product->name}}<p>
+      <p class="code">{{$product->code}}</p>
+      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <form method="get" class="exp" action="/{{$key}}/{{$product->code}}">
+      <button type="submit" class="btn btn-warning">Chi tiết</button>
+      </form>
+    </div>
+    <div class="p2 row">
+      <p class="code">{{$product->code}}</p>
+      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <div class="description"><?=$product->description ?></div>
+      <form method="get" class="exp" action="/{{$key}}/{{$product->code}}">
+      <button type="submit" class="btn btn-warning">Chi tiết</button>
+      </form>
+    </div>
+  </div>
+  @endforeach
+  @endif
+</div>
+@endforeach
 @endsection
 @section('js')
   @if(Session::has('search'))
