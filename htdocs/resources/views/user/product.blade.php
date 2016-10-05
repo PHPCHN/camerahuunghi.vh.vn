@@ -24,6 +24,7 @@ CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
     <p class="price">Giá: <span class="price-sp">{{number_format($product->price,0,',','.')}} VND</span></p>
     <p>Thương hiệu: {{$product->get_opt_th()}}</p>
     <?=$product->description ?>
+    <p class="price contact">Liên hệ <span class="price-sp">0987 926 117 - 0942 926 117</span> để được tư vấn Miễn Phí - Hỗ trợ kỹ thuật và giao hàng trên toàn quốc</p>
   </div>
   <div class="detail-exp col-xs-12">
     <ul class="nav nav-tabs">

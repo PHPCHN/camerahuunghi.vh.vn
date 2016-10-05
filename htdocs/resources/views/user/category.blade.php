@@ -60,7 +60,7 @@ CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
     - {{Session::get('products')->total()}} SẢN PHẨM
   </h6>
   <div class="col-xs-12">
-  {{Session::get('products')->appends($input_opts)->links()}}
+  {{Session::get('products')->appends($input_opts)->render()}}
   </div>
   @foreach (Session::get('products') as $product)
   <div class="item col-xs-6 col-sm-2">
@@ -88,7 +88,7 @@ CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
   </div>
   @endforeach
   <div class="col-xs-12">
-  {{Session::get('products')->appends($input_opts)->links()}}
+  {{Session::get('products')->appends($input_opts)->render()}}
   </div>
 </div>
 @endsection

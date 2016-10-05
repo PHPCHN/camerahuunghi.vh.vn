@@ -74,8 +74,8 @@ class Product extends Model
       $trademark = DB::table('product_opts')
                       ->join('option_vals', 'option_vals.id', '=', 'product_opts.opt_val_id')
                       ->where('product_id', $this->id)
-                      ->where('opt_id', 2)->pluck('label');
-      if($trademark->count()) return $trademark[0];
+                      ->where('opt_id', 2)->lists('label');
+      if(count($trademark)) return $trademark[0];
     }
 
     public function get_cate() {
@@ -108,7 +108,7 @@ class Product extends Model
     }
 
     public static function listby_cate($cate_id, $column=null) {
-      $cate_ids = Category::where('id', $cate_id)->orWhere('sup_id', $cate_id)->pluck('id');
+      $cate_ids = Category::where('id', $cate_id)->orWhere('sup_id', $cate_id)->lists('id');
       if(!$column) $column = self::column();
       $products = self::select($column)->whereIn('cate_id', $cate_ids);
       return $products;
@@ -124,7 +124,7 @@ class Product extends Model
     public static function listby_cate_opt($cate_id, $request) {
       $product_ids = self::listby_opt($request);
       $products = self::listby_cate($cate_id);
-      if(count($product_ids))
+      if($product_ids!==null)
         $products = $products->whereIn('id', $product_ids);
       $product_sorts = self::listby_sort($products, $request->input('sort'))->paginate(self::PAGINATE);
       return $product_sorts;
@@ -140,14 +140,14 @@ class Product extends Model
                   ->where('option_vals.keyword', $val);
           });
         }
-      })->pluck('option_vals.id');
-      if($options->count()>0 && $options->count()<=count($request->all())) {
+      })->select('option_vals.id')->lists('id');
+      if(count($options)>0 && count($options)<=count($request->all())) {
         $product_ids = DB::table('product_opts')->whereIn('opt_val_id', $options)
                         ->groupBy('product_id')
-                        ->havingRaw('count(product_id) = '.($options->count()))
-                        ->pluck('product_id');
-      } else $product_ids = array();
-      return $product_ids;
+                        ->havingRaw('count(product_id) = '.(count($options)))
+                        ->lists('product_id');
+        return $product_ids;
+      }
     }
 
     private static function listby_sort($query, $sort) {
@@ -166,13 +166,13 @@ class Product extends Model
           $query->orWhere('keyword', 'like', '%'.$key.'%')
             ->orWhereRaw("'$key' like concat('%',keyword,'%')");
           }
-      })->pluck('id');
-      $product_search_ids = DB::table('product_seos')->whereIn('seo_id', $seo_ids)->pluck('product_id');
+      })->lists('id');
+      $product_search_ids = DB::table('product_seos')->whereIn('seo_id', $seo_ids)->lists('product_id');
       $product_sort_ids = self::listby_opt($request);
       $products = self::select(self::column())->whereIn('id', $product_search_ids);
-      if(count($product_sort_ids))
+      if($product_sort_ids!==null)
         $products = $products->whereIn('id', $product_sort_ids);
-      $products = $products->paginate(self::PAGINATE);
+      $products = self::listby_sort($products, $request->input('sort'))->paginate(self::PAGINATE);
       $link_keys = Category::listfor_links();
       foreach($products as $product)
         $product->link = $link_keys[$product->cate_id].'/'.$product->code;

@@ -42,7 +42,7 @@ class Option extends Model
     public static function listby_cate($cate) {
       $cate_id = $cate->sup_id;
       if($cate_id == 0) $cate_id = $cate->id;
-      $opt_ids = DB::table('category_opts')->where('cate_id', $cate_id)->pluck('opt_id');
+      $opt_ids = DB::table('category_opts')->where('cate_id', $cate_id)->lists('opt_id');
       return self::listby_ids($opt_ids);
     }
 

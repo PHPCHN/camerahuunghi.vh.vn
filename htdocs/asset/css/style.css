@@ -165,6 +165,10 @@
   font-weight: bold;
 }
 
+.product .detail .contact{
+  color: #0065b2;
+}
+
 .product .detail .price .price-sp {
   color: #f00;
 }
