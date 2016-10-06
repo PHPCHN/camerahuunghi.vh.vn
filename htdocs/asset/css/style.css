@@ -46,7 +46,7 @@
 
 #sub-menu {
   background-color: #e2ddda;
-  padding-left: 30px;
+  margin: 0;
 }
 
 #sub-menu a{
@@ -64,8 +64,8 @@
 }
 
 #opt-menu {
+  margin: 0;
   padding-top: 5px;
-  padding-left: 30px;
 }
 
 #opt-menu .item select{
@@ -75,7 +75,8 @@
   padding: 0 12px;
 }
 
-.content .col-left h6{
+.content .col-left h3,
+.content .col-left .h6{
   color: #f58121;
   font-size: 16px;
   font-weight: bold;
@@ -85,10 +86,12 @@
   padding: 0;
 }
 
-.myCarousel img{
+#myCarousel img{
   width: 100%;
 }
 
+.product h1,
+.product h3,
 .product h6{
   color: #0065b2;
   font-size: 16px;
@@ -189,7 +192,7 @@
   font-size: 16px;
 }
 
-.new h6{
+.new h6, .new h3{
   color: #0065b2;
   font-size: 16px;
   font-weight: bold;
@@ -218,7 +221,8 @@
   min-height: 200px;
 }
 
-.about .item h6{
+.about .item h6,
+.about .item .h6{
   color: #0065b2;
   font-size: 16px;
   font-weight: bold;
@@ -229,7 +233,7 @@
   color: #0065b2;
 }
 
-.footer h6{
+.footer .h6{
   font-size: 16px;
   font-weight: bold;
 }
