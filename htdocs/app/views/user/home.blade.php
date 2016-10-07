@@ -1,13 +1,19 @@
 @extends('layout.user')
 @section('title')
-CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
+CAMERA QUAN SÁT,
+@endsection
+@section('description')
+CAMERA QUAN SÁT,
+@endsection
+@section('keywords')
+CAMERA QUAN SÁT,
 @endsection
 @section('headcontent')
 @include('user.partial.headcontent')
 @endsection
 @section('content')
 <div class="product row">
-  <h1>TOP BÁN CHẠY NHẤT</h1>
+  <h6>TOP BÁN CHẠY NHẤT</h6>
   @foreach (Session::get('top_products') as $product)
   <div class="item col-xs-6 col-sm-2">
     <div class="p1 row">
@@ -43,7 +49,7 @@ CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
 $main_products = Session::get('main_products'); ?>
 @foreach ($mcates as $key=>$value)
 <div class="product row">
-  <h3>{{$value}}</h3>
+  <h6>{{$value}}</h6>
   @if(isset($main_products[$key]))
   @foreach ($main_products[$key] as $product)
   <div class="item col-xs-6 col-sm-2">

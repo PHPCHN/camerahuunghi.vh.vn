@@ -1,8 +1,15 @@
 @extends('layout.user')
+<?php $input_opts = Session::get('input_opts') ?>
 @section('title')
-CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
+Tìm kiếm,
 @endsection
-<?php $input_opts = Session::get('input_opts')?>
+@section('description')
+Tìm kiếm,
+@endsection
+@section('keywords')
+{{$input_opts['search']}},
+@endsection
+
 @section('headcontent')
 <div class="navbar-collapse" id="opt-menu">
   <form method="get">

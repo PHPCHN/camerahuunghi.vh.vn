@@ -125,6 +125,22 @@ class Product extends Model
       return $product_sorts;
     }
 
+    public function list_involve() {
+      $options = DB::table('product_opts')->where('product_id', $this->id)->lists('opt_val_id');
+      $product_ids = DB::table('product_opts')->selectRaw('product_id, count(product_id) as count')
+                      ->whereIn('opt_val_id', $options)
+                      ->whereNotIn('product_id', [$this->id])
+                      ->groupBy('product_id')
+                      ->orderBy('count', 'desc')
+                      ->take(5)->lists('product_id');
+      $products = self::select(self::column())->whereIn('id', $product_ids)
+                    ->orderBy('code')->get();
+      $link_keys = Category::listfor_links();
+      foreach($products as $product)
+        $product->link = $link_keys[$product->cate_id].'/'.$product->code;
+      return $products;
+    }
+
     private static function listby_opt() {
       $sort = Input::get('sort');
       $options = Option::join('option_vals', 'option_vals.opt_id', '=', 'options.id')

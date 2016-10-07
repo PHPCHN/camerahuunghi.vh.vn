@@ -2,7 +2,13 @@
 
 class BaseAdminController extends BaseController
 {
-
+    /**
+     * Instantiate a new AdminBaseController instance.
+     */
+      public function __construct()
+      {
+          $this->beforeFilter('auth');
+      }
     /**
      * Save upload image from request file into uploads folder
      *
@@ -69,7 +75,7 @@ class BaseAdminController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -103,7 +109,7 @@ class BaseAdminController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         //
     }

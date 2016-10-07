@@ -1,15 +1,21 @@
 @extends('layout.user')
+<?php $sub_cate = Session::get('sub_cate');
+      $category = Session::get('category');
+      $product = Session::get('product'); ?>
 @section('title')
-CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
+{{$product->name}},
+@endsection
+@section('description')
+{{$product->name}},
+@endsection
+@section('keywords')
+{{$product->name}},
 @endsection
 @section('headcontent')
 @endsection
 @section('content')
-<?php $sub_cate = Session::get('sub_cate');
-      $category = Session::get('category');
-      $product = Session::get('product');?>
 <div class="product row">
-  <h1><a href="/">TRANG CHỦ</a>
+  <h6><a href="/">TRANG CHỦ</6>
     -> <a href="/{{$category->keyword}}">{{$category->name}}</a>
     @if($sub_cate->id != $category->id)
     -> <a href="/{{$sub_cate->keyword}}">{{$sub_cate->name}}</a>
@@ -40,6 +46,35 @@ CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
       </div>
     </div>
   </div>
+</div>
+<?php $product_involves = $product->list_involve(); ?>
+<div class="product row">
+  <h6>SẢN PHẨM LIÊN QUAN</h6>
+  @foreach ($product_involves as $product)
+  <div class="item col-xs-6 col-sm-2">
+    <div class="p1 row">
+      <div class="img">
+        <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
+      </div>
+      <p>{{$product->name}}<p>
+      <p class="code">{{$product->code}}</p>
+      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <form method="get" class="exp"
+      action="/{{$product->link}}">
+      <button type="submit" class="btn btn-warning">Chi tiết</button>
+      </form>
+    </div>
+    <div class="p2 row">
+      <p class="code">{{$product->code}}</p>
+      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <div class="description"><?=$product->description ?></div>
+      <form method="get" class="exp"
+      action="/{{$product->link}}">
+      <button type="submit" class="btn btn-warning">Chi tiết</button>
+      </form>
+    </div>
+  </div>
+  @endforeach
 </div>
 @endsection
 @section('extra')

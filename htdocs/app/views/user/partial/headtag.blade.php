@@ -1,9 +1,9 @@
 <link rel="icon" href="{{asset('asset/img/icon.png')}}">
-<title>@yield('title')</title>
+<title>CAMERA Đà Nẵng, @yield('title')Lắp Đặt Camera Giá Rẻ</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ĐẦU GHI CAMERA CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ, do muc may in o da nang, sua may in tai da nang">
-<meta name="keywords" content="ĐẦU GHI CAMERA CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ, do muc may in o da nang, sua may in tai da nang">
+<meta name="description" content="ĐẦU GHI CAMERA CAMERA Đà Nẵng, @yield('description')Lắp Đặt Camera Giá Rẻ, do muc may in o da nang, sua may in tai da nang">
+<meta name="keywords" content="ĐẦU GHI CAMERA CAMERA Đà Nẵng, @yield('keywords')Lắp Đặt Camera Giá Rẻ, do muc may in o da nang, sua may in tai da nang">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

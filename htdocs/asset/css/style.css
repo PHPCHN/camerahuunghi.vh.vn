@@ -1,3 +1,9 @@
+@media(max-width: 767px){
+  #menu a {
+    padding-left: 45px;
+  }
+}
+
 .wrapper{
   padding: 0;
 }
@@ -6,9 +12,33 @@
   margin: 0;
 }
 
+.logo {
+  padding: 0;
+}
+
 .logo img{
-  width: 92%;
-  margin: 4%;
+  width: 86%;
+  margin: 0 7%;
+}
+
+.banner {
+  padding: 0;
+}
+
+.banner img{
+  width: 100%;
+}
+
+.ex-link {
+  position: absolute;
+  right: 15px;
+  bottom: 1px;
+}
+
+.ex-link img {
+  width: 30px;
+  float: left;
+  margin-left: 1px;
 }
 
 .menu .navbar-header, #menu{
@@ -38,10 +68,26 @@
   color: #fff;
 }
 
-#menu .search-box, .navbar-header .search-box{
+#menu .item img {
+  position: absolute;
+  z-index: 1000;
+  width: 30px;
+  height: 20px;
+  left: 0;
+  top: 24px;
+}
+
+#menu .search-box,
+.navbar-header .search-box{
   padding-top: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
+}
+
+#menu .search-box button,
+.navbar-header .search-box button{
+  position: absolute;
+  right: 15px;
+  top: 0;
+  width: 40px;
 }
 
 #sub-menu {
@@ -117,12 +163,15 @@
   width: 100%;
 }
 
-.product .item .code{
+.product .item .code,
+.product-seen .item .code {
   font-weight: bold;
   color: #0065b2;
 }
 
-.product .item .price{
+.product .item .price,
+.product-seen .item .price
+{
   font-weight: bold;
   color: #f00;
 }
@@ -192,7 +241,28 @@
   font-size: 16px;
 }
 
-.new h6, .new h3{
+.product-seen .item{
+  border: 1px solid #ccc;
+}
+
+.product-seen .item .img {
+  padding: 0;
+}
+
+.product-seen .item img {
+  width: 100%;
+}
+
+.product-seen .item .name {
+  color: #333333;
+}
+
+.product-seen .item .detail {
+  padding-top: 10px;
+}
+
+.new h6, .new h3,
+.product-seen h6{
   color: #0065b2;
   font-size: 16px;
   font-weight: bold;
@@ -200,7 +270,7 @@
 }
 
 .new .item{
-  min-height: 250px;
+  min-height: 150px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -248,6 +318,12 @@
 }
 
 @media(min-width: 768px){
+  #menu .item img {
+    top: 5px;
+    left: 50%;
+    margin-left: -15px;
+  }
+
   .product .col-sm-2{
     width:20%;
   }
@@ -266,7 +342,7 @@
   }
 
   #menu .search-box{
-    width: 23%;
+    width: 36%;
   }
 
   .product .item .img{
@@ -288,7 +364,7 @@
 
 @media(min-width: 980px){
   #menu .search-box{
-    width: 36%;
+    //width: 36%;
   }
 
   .product .item .img{
@@ -298,7 +374,7 @@
 
 @media(min-width: 1200px){
   #menu .search-box{
-    width: 48%;
+    //width: 48%;
   }
 
   .product .item .img{

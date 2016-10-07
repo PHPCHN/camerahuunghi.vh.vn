@@ -20,5 +20,5 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);*/
 
+require __DIR__.'/routes/admin.php';
 require __DIR__.'/routes/user.php';
-//require __DIR__.'/routes/admin.php';

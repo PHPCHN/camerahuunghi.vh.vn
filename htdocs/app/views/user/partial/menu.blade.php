@@ -7,23 +7,41 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
         </button>
-        <form class="search-box" method="get" action="/search">
-          <input class="form-control" type="text" name="search">
-        </form>
+        <div class="search-box">
+          <form class="col-xs-12" method="get" action="/search">
+            <input class="form-control col-xs-12" type="text" name="search">
+            <button type="submit" class="btn-default form-control">
+              <span class="glyphicon glyphicon-search"></span></button>
+          </form>
+        </div>
     </div>
     <div class="navbar-collapse collapse" id="menu">
       <ul class="nav">
         <li class="search-box hidden-xs">
-          <form method="get" action="/search">
-            <input class="form-control" type="text" name="search">
+          <form class="col-xs-12" method="get" action="/search">
+            <input class="form-control col-xs-12" type="text" name="search">
+            <button type="submit" class="btn-default form-control">
+              <span class="glyphicon glyphicon-search"></span></button>
           </form>
         </li>
-        <li class="item"><a href="/camera" >CAMERA</a></li>
-        <li class="item"><a href="/dau-ghi" >ĐẦU GHI</a></li>
-        <li class="item"><a href="/bao-trom" >BÁO TRỘM</a></li>
-        <li class="item"><a href="/bo-dam" >BỘ ĐÀM</a></li>
-        <li class="item"><a href="/chuong-cua" >CHUÔNG CỬA</a></li>
-        <li class="item"><a href="/phu-kien" >PHỤ KIỆN</a></li>
+        <li class="item"><a href="/camera" >
+          <img alt="cam-icon" src="{{asset('asset/img/cam-icon.png')}}">
+          CAMERA</a></li>
+        <li class="item"><a href="/dau-ghi" >
+          <img alt="nvr-icon" src="{{asset('asset/img/nvr-icon.png')}}">
+          ĐẦU GHI</a></li>
+        <li class="item"><a href="/bao-trom" >
+          <img alt="icon-alm" src="{{asset('asset/img/icon-alm.png')}}">
+          BÁO TRỘM</a></li>
+        <li class="item"><a href="/bo-dam" >
+          <img alt="icon-radio" src="{{asset('asset/img/icon-radio.png')}}">
+          BỘ ĐÀM</a></li>
+        <li class="item"><a href="/chuong-cua" >
+          <img alt="icon-dbl" src="{{asset('asset/img/icon-dbl.png')}}">
+          CHUÔNG CỬA</a></li>
+        <li class="item"><a href="/phu-kien" >
+          <img alt="icon-acs" src="{{asset('asset/img/icon-acs.png')}}">
+          PHỤ KIỆN</a></li>
       </ul>
     </div>
   </div>

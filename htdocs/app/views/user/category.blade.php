@@ -1,8 +1,16 @@
 @extends('layout.user')
+<?php $input_opts = Session::get('input_opts');
+$sup_cate = Session::get('sup_cate');
+$category = Session::get('category'); ?>
 @section('title')
-CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
+{{$category->name}},
 @endsection
-<?php $input_opts = Session::get('input_opts')?>
+@section('description')
+{{$category->name}},
+@endsection
+@section('keywords')
+{{$category->name}},
+@endsection
 @section('headcontent')
 @if(Session::get('sub_cates')->count())
 <div class="navbar-collapse" id="sub-menu">
@@ -50,15 +58,13 @@ CAMERA Đà Nẵng, CAMERA QUAN SÁT, Lắp Đặt Camera Giá Rẻ
 @endsection
 @section('content')
 <div class="product row">
-  <h1><a href="/">TRANG CHỦ</a>
-    <?php $sup_cate = Session::get('sup_cate');
-    $category = Session::get('category'); ?>
+  <h6><a href="/">TRANG CHỦ</a>
     @if($sup_cate)
     -> <a href="/{{$sup_cate->keyword}}">{{$sup_cate->name}}</a>
     @endif
     -> <a href="/{{$category->keyword}}">{{$category->name}}</a>
     - {{$products->getTotal()}} SẢN PHẨM
-  </h1>
+  </h6>
   <div class="col-xs-12">
   {{$products->appends($input_opts)->links()}}
   </div>

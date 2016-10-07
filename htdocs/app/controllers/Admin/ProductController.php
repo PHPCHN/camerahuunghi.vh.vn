@@ -19,7 +19,7 @@ class ProductController extends BaseAdminController
      */
     public function create()
     {
-        return view('admin.product.create');
+        return View::make('admin.product.create');
     }
 
     /**
@@ -28,14 +28,15 @@ class ProductController extends BaseAdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $data = $request->all();
-        if ($request->hasFile('image')) {
-            $data['image'] = $this->imageUpload('product', $request->file('image'));
+        $data = Input::all();
+        if (Input::hasFile('image')) {
+            $data['image'] = $this->imageUpload('product', Input::file('image'));
         } else $data['image'] = '';
+        $data['content'] = $data['description'];
         Product::create($data);
-        return redirect()->route('product.create');
+        return Redirect::route('product.create');
     }
 
     /**
@@ -67,7 +68,7 @@ class ProductController extends BaseAdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         //
     }

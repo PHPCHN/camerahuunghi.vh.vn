@@ -10,12 +10,34 @@ class DetailController extends BaseUserController
         if($product_find) {
           $sub_cate = Category::select(['id', 'name', 'keyword'])
           ->where('id',$product_find->cate_id)->first();
+          $product_find->link = $category_find->keyword;
+          $this->session_push($product_find);
           Session::flash('product', $product_find);
           Session::flash('category', $category_find);
           Session::flash('sub_cate', $sub_cate);
           return View::make('user.product');
         }
         else return View::make('errors.404');
+    }
+
+    private function session_push($product) {
+      //Session::forget('product_seens');
+      $in_seens = $this->in_seens($product);
+      $in_seens[] = $product;
+      Session::put('product_seens', $in_seens);
+    }
+
+    private function in_seens($product) {
+      $in_seens = array();
+      $count = 0;
+      if(Session::has('product_seens')) {
+        foreach(Session::get('product_seens') as $product_seen)
+          if($product_seen->id != $product->id && $count<4) {
+            $in_seens[] = $product_seen;
+            $count++;
+          }
+      }
+      return $in_seens;
     }
     /**
      * Display a listing of the resource.
