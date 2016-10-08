@@ -17,10 +17,9 @@ Route::get('logout', [
 
 Route::get('admin', [
   'as' => 'admin',
-  'uses' => 'ProductController@create',
+  'uses' => 'AuthController@index',
 ]);
 
-Route::post('admin', [
-  'as' => 'admin-post',
-  'uses' => 'ProductController@store',
-]);
+Route::group(['prefix' => 'admin'], function () {
+  Route::resource('product', 'ProductController');
+});

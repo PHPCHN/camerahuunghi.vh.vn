@@ -4,7 +4,10 @@
 @section('content')
 <div class="product row">
 <h6>THÊM SẢN PHẨM</h6>
-<form class="form-horizontal" role="form" enctype="multipart/form-data" method="post">
+@include('layout.partial.flash')
+<form class="form-horizontal" role="form" action="/admin/product"
+  enctype="multipart/form-data" method="post">
+  <input type="hidden" name="_token" value="{{csrf_token()}}" />
   <input type="hidden" name="cate_id" value="0" />
   <div class="form-group">
    <label class="control-label col-sm-2" for="code">Mã SP:</label>

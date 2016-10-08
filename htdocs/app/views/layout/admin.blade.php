@@ -6,12 +6,12 @@
     <body>
       <div class="wrapper container-fluid">
         @include('user.partial.header')
-        @include('user.partial.menu')
         <div class="content row">
           <div class="products col-sm-9">
             @yield('content')
           </div>
           <div class="news col-sm-3">
+            @include('admin.partial.menu');
           </div>
         </div>
         @include('user.partial.footer')

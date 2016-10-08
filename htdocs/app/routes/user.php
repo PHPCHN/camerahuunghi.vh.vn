@@ -6,7 +6,7 @@ Route::get('/', [
 ]);
 
 Route::get('search', [
-  'as' => 'user.index',
+  'as' => 'user.search',
   'uses' => 'IndexController@search',
 ]);
 

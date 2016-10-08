@@ -1,14 +1,25 @@
 <?php
 
-class AuthController extends BaseController {
+class AuthController extends BaseAdminController {
 
-  /**
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return View::make('admin.home');
+    }
+
+    /**
      * Show page login for admin.
      *
      * @return Response
      */
     public function getLogin()
     {
+        $test = new BaseFilter;
         return View::make('login');
     }
 
@@ -37,7 +48,6 @@ class AuthController extends BaseController {
     public function getLogout()
     {
         Auth::logout();
-
         return Redirect::to('login');
     }
 }

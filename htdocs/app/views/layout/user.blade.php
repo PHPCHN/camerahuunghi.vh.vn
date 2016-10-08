@@ -6,7 +6,6 @@
     <body>
       <div class="wrapper container-fluid">
         @include('user.partial.header')
-        @include('user.partial.menu')
         @yield('headcontent')
         <div class="content row">
           <div class="products col-sm-9">

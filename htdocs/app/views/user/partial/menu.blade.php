@@ -34,13 +34,13 @@
           <img alt="icon-alm" src="{{asset('asset/img/icon-alm.png')}}">
           BÁO TRỘM</a></li>
         <li class="item"><a href="/bo-dam" >
-          <img alt="icon-radio" src="{{asset('asset/img/icon-radio.png')}}">
+          <img alt="icon-rad" src="{{asset('asset/img/icon-rad.png')}}">
           BỘ ĐÀM</a></li>
         <li class="item"><a href="/chuong-cua" >
-          <img alt="icon-dbl" src="{{asset('asset/img/icon-dbl.png')}}">
+          <img alt="icon-drb" src="{{asset('asset/img/icon-drb.png')}}">
           CHUÔNG CỬA</a></li>
         <li class="item"><a href="/phu-kien" >
-          <img alt="icon-acs" src="{{asset('asset/img/icon-acs.png')}}">
+          <img alt="icon-acx" src="{{asset('asset/img/icon-acx.png')}}">
           PHỤ KIỆN</a></li>
       </ul>
     </div>

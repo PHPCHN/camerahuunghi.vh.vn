@@ -9,7 +9,7 @@ class ProductController extends BaseAdminController
      */
     public function index()
     {
-        //
+        return View::make('admin.product.index');
     }
 
     /**
@@ -35,7 +35,12 @@ class ProductController extends BaseAdminController
             $data['image'] = $this->imageUpload('product', Input::file('image'));
         } else $data['image'] = '';
         $data['content'] = $data['description'];
-        Product::create($data);
+        if(Product::create($data)) {
+          Session::flash('flash_success', trans('messages.create_success_products'));
+        }
+        else {
+          Session::flash('flash_error', trans('messages.create_fail_products'));
+        }
         return Redirect::route('product.create');
     }
 
@@ -47,7 +52,7 @@ class ProductController extends BaseAdminController
      */
     public function show($id)
     {
-        //
+        return Redirect::route('admin.product.edit', $id);
     }
 
     /**
@@ -58,7 +63,7 @@ class ProductController extends BaseAdminController
      */
     public function edit($id)
     {
-        //
+        return View::make('admin.product.edit');
     }
 
     /**

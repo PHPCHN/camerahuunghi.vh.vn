@@ -1,4 +1,8 @@
 @media(max-width: 767px){
+  .logo .img {
+    bottom: 0px;
+  }
+
   #menu a {
     padding-left: 45px;
   }
@@ -16,13 +20,19 @@
   padding: 0;
 }
 
-.logo img{
+.logo .img {
+  position: absolute;
+  left: 0;
+}
+
+.logo img {
   width: 86%;
   margin: 0 7%;
 }
 
 .banner {
   padding: 0;
+  min-height: 50px;
 }
 
 .banner img{
@@ -318,6 +328,10 @@
 }
 
 @media(min-width: 768px){
+  .logo .img {
+    bottom: -51px;
+  }
+
   #menu .item img {
     top: 5px;
     left: 50%;
