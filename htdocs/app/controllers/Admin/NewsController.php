@@ -2,6 +2,12 @@
 
 class NewsController extends BaseAdminController
 {
+    public function __construct() {
+        parent::__construct();
+        $this->beforeFilter('news_create', ['only' => 'store']);
+        $this->beforeFilter('news_update', ['only' => 'update']);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -9,7 +15,9 @@ class NewsController extends BaseAdminController
      */
     public function index()
     {
-        //
+        $news = News::select(['id', 'title'])
+                        ->paginate(News::PAGINATE);
+        return View::make('admin.news.index')->with('news_list', $news);
     }
 
     /**
@@ -19,7 +27,7 @@ class NewsController extends BaseAdminController
      */
     public function create()
     {
-        //
+        return View::make('admin.news.create');
     }
 
     /**
@@ -28,9 +36,19 @@ class NewsController extends BaseAdminController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $data = Input::all();
+        if (Input::hasFile('image')) {
+            $data['image'] = $this->imageUpload(News::UPLOAD_KEY, Input::file('image'));
+        } else $data['image'] = '';
+        if(News::create($data)) {
+          Session::flash('flash_success', trans('messages.create_success_news'));
+        }
+        else {
+          Session::flash('flash_error', trans('messages.create_fail_news'));
+        }
+        return Redirect::route('admin.news.create');
     }
 
     /**
@@ -41,7 +59,7 @@ class NewsController extends BaseAdminController
      */
     public function show($id)
     {
-        //
+        return Redirect::route('admin.news.edit', $id);
     }
 
     /**
@@ -52,7 +70,18 @@ class NewsController extends BaseAdminController
      */
     public function edit($id)
     {
-        //
+        $column = [
+          'id',
+          'title',
+          'description',
+          'image',
+          'content',
+        ];
+        $news = News::select($column)->find($id);
+        if($news) {
+          return View::make('admin.news.edit')->with('news', $news);
+        }
+        else return View::make('errors.404');
     }
 
     /**
@@ -62,9 +91,29 @@ class NewsController extends BaseAdminController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $data = Input::all();
+        $column = [
+          'id',
+          'title',
+          'description',
+          'image',
+          'content',
+        ];
+        $news = News::select($column)->find($id);
+        if ($news) {
+          if (Input::hasFile('image')) {
+            $data['image'] = $this->imageUpload(News::UPLOAD_KEY, Input::file('image'));
+          } else $data['image'] = $news->image;
+          if($news->update($data)) {
+            Session::flash('flash_success', trans('messages.update_success_news'));
+          }
+          else {
+            Session::flash('flash_error', trans('messages.update_fail_news'));
+          }
+          return Redirect::route('admin.news.edit', $id);
+        } else return View::make('errors.404');
     }
 
     /**

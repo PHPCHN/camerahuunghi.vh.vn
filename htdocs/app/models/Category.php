@@ -55,4 +55,13 @@ class Category extends Model
       }
       return $list_keys;
     }
+
+    public static function listof_names() {
+      $cates = self::select(['id', 'name'])->get();
+      $listof_names = array();
+      foreach($cates as $cate) {
+          $listof_names[$cate->id] = $cate->name;
+      }
+      return $listof_names;
+    }
 }

@@ -19,7 +19,6 @@ class AuthController extends BaseAdminController {
      */
     public function getLogin()
     {
-        $test = new BaseFilter;
         return View::make('login');
     }
 

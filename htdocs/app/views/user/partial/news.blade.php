@@ -19,17 +19,21 @@
   @endforeach
 </div>
 @endif
-
 <div class="new row">
   <h6>TIN TỨC</h6>
-  <div class="item col-xs-12">
+  @foreach (Session::get('news_list') as $news)
+  <div class="item">
+    <a href="/tin-tuc/{{$news->id}}">
+    <div class="row">
+      <div class="img col-xs-6 col-sm-4">
+        <img alt="{{$news->image}}" src="{{asset($news->image_link())}}" >
+      </div>
+      <div class="detail">
+        <p class="title">{{$news->title}}<p>
+        <p class="description"><?=strip_tags($news->description) ?></p>
+      </div>
+    </div>
+    </a>
   </div>
-  <div class="item col-xs-12">
-  </div>
-  <div class="item col-xs-12">
-  </div>
-  <div class="item col-xs-12">
-  </div>
-  <div class="item col-xs-12">
-  </div>
+  @endforeach
 </div>

@@ -29,9 +29,11 @@ class IndexController extends BaseUserController
     {
         $category = Category::getby_keyword($cate);
         if($category) {
-          $sub_cates = Category::select(['id', 'name', 'keyword'])->where('sup_id', $category->id)->get();
+          $sub_cates = Category::select(['id', 'name', 'keyword'])
+              ->where('sup_id', $category->id)->get();
           $products = Product::listby_cate_opt($category->id);
-          $sup_cate = Category::select(['id', 'name', 'keyword'])->find($category->sup_id);
+          $sup_cate = Category::select(['id', 'name', 'keyword'])
+              ->find($category->sup_id);
           $options = Option::listby_cate($category);
           Session::flash('options', $options);
           Session::flash('category', $category);

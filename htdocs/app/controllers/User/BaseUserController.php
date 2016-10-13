@@ -2,6 +2,16 @@
 
 class BaseUserController extends BaseController
 {
+
+    /**
+     * Instantiate a new AdminBaseController instance.
+     */
+    public function __construct()
+    {
+        $news_list = News::select(['id', 'title', 'description', 'image'])->get();
+        Session::flash('news_list', $news_list);
+    }
+
     /**
      * Display a listing of the resource.
      *

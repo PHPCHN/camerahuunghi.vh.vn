@@ -11,6 +11,9 @@
 @section('keywords')
 {{$product->name}},
 @endsection
+@section('css')
+
+@endsection
 @section('headcontent')
 @endsection
 @section('content')
@@ -24,9 +27,15 @@
   </h1>
   <div class="img-detail col-xs-6">
     <img alt="{{$product->image}}" src="{{asset($product->image_link())}}">
+    <div class="g-plus">
+    <div class="g-plusone" data-size="medium"
+    data-href="{{asset($category->keyword.'/'.$product->code)}}"></div></div>
+    <div id="fb-root"></div>
+    <div class="fb-like" data-href="{{asset($category->keyword.'/'.$product->code)}}"
+    data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
   </div>
   <div class="detail col-xs-6">
-    <p class="title">{{$product->name}}</p>
+    <h1 class="title">{{$product->name}}</h1>
     <p class="price">Giá: <span class="price-sp">{{number_format($product->price,0,',','.')}} VND</span></p>
     <p>Thương hiệu: {{$product->get_opt_th()}}</p>
     <?=$product->description ?>
@@ -40,6 +49,7 @@
 
     <div class="tab-content">
       <div id="description" class="tab-pane fade in active">
+        <h3 class="title">{{$product->name}}</h3>
         <?=$product->content ?>
       </div>
       <div id="comment" class="tab-pane fade">
@@ -49,9 +59,9 @@
 </div>
 <?php $product_involves = $product->list_involve(); ?>
 <div class="product row">
-  <h6>SẢN PHẨM LIÊN QUAN</h6>
+  <h2>SẢN PHẨM LIÊN QUAN</h2>
   @foreach ($product_involves as $product)
-  <div class="item col-xs-6 col-sm-2">
+  <div class="item col-xs-6 col-sm-3 col-md-2">
     <div class="p1 row">
       <div class="img">
         <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
@@ -78,32 +88,7 @@
 </div>
 @endsection
 @section('extra')
-<div class="extra row">
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-</div>
+@include('user.partial.extra')
 @endsection
 @section('js')
   @if(Session::has('search'))
@@ -111,4 +96,14 @@
     alert("search={{Session::get('search')}}")
     </script>
   @endif
+  <script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'vi'}
+</script>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 @endsection

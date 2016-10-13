@@ -54,7 +54,7 @@ Tìm kiếm,
   {{$products->appends($input_opts)->links()}}
   </div>
   @foreach ($products as $product)
-  <div class="item col-xs-6 col-sm-2">
+  <div class="item col-xs-6 col-sm-3 col-md-2">
     <div class="p1 row">
       <div class="img">
         <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
@@ -84,32 +84,7 @@ Tìm kiếm,
 </div>
 @endsection
 @section('extra')
-<div class="extra row">
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-  <div class="col-xs-4 col-sm-2">
-    <div class="item col-xs-12">
-    </div>
-  </div>
-</div>
+@include('user.partial.extra')
 @endsection
 @section('js')
   @if(Session::has('search'))

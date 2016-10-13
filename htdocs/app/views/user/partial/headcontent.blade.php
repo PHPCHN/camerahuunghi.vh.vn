@@ -8,10 +8,10 @@
        </ol>
        <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img alt="slide-1" src="{{asset('asset/img/1.jpg')}}" >
+            <img alt="slide-1" src="{{asset('asset/img/banner1.png')}}" >
           </div>
           <div class="item">
-            <img alt="slide-2" src="{{asset('asset/img/2.jpg')}}" >
+            <img alt="slide-2" src="{{asset('asset/img/banner3.png')}}" >
           </div>
        </div>
        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

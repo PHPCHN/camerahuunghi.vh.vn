@@ -4,6 +4,7 @@ class News extends Model
 {
 
     const UPLOAD_KEY = 'news';
+    const PAGINATE = 20;
 
     /**
      * The database table used by the model.
@@ -30,4 +31,8 @@ class News extends Model
         'image',
         'content',
     ];
+
+    public function image_link() {
+      return Config::get('uploads.'.self::UPLOAD_KEY).$this->image;
+    }
 }

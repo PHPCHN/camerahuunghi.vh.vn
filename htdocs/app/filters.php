@@ -90,3 +90,6 @@ Route::filter('csrf', function()
 		//throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+require __DIR__.'/filters/admin.php';
+require __DIR__.'/filters/user.php';

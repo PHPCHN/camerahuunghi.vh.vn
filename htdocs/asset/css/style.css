@@ -146,7 +146,12 @@
   width: 100%;
 }
 
+#myCarousel .carousel-control {
+  width: 5%;
+}
+
 .product h1,
+.product h2,
 .product h3,
 .product h6{
   color: #0065b2;
@@ -174,7 +179,8 @@
 }
 
 .product .item .code,
-.product-seen .item .code {
+.product-seen .item .code,
+.news .item .title {
   font-weight: bold;
   color: #0065b2;
 }
@@ -204,11 +210,23 @@
   display: none;
   left: 15px;
   top: 0;
+  bottom: 0;
 }
 
-.product .item .exp {
+.product .item .exp .btn {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.product .item .p1 .exp {
   text-align: center;
   padding-bottom: 5px;
+}
+
+.product .item .p2 .exp {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 .product .img-detail img{
@@ -216,10 +234,23 @@
   border: 1px solid #ccc;
 }
 
+.product .img-detail .g-plus{
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+}
+
+.product .img-detail .fb-like{
+  position: absolute;
+  right: 30px;
+  bottom: 15px;
+}
+
 .product .detail .title {
   font-size: 24px;
   font-weight: bolder;
   color: #0065b2;
+  border: 0;
 }
 
 .product .detail .price {
@@ -247,6 +278,12 @@
   padding-top: 15px;
 }
 
+.product #description .title{
+  margin-top: 10px;
+  text-align: center;
+  border: 0;
+}
+
 .product #description p{
   font-size: 16px;
 }
@@ -255,11 +292,11 @@
   border: 1px solid #ccc;
 }
 
-.product-seen .item .img {
+.product-seen .item .img, .new .item .img {
   padding: 0;
 }
 
-.product-seen .item img {
+.product-seen .item img, .new .item img {
   width: 100%;
 }
 
@@ -280,8 +317,24 @@
 }
 
 .new .item{
-  min-height: 150px;
   border-bottom: 1px solid #ccc;
+}
+
+.new .item .img {
+  padding-right: 15px;
+}
+
+.new .item a {
+  text-decoration: none;
+}
+
+.new .item .title {
+  text-align: justify;
+}
+
+.new .item .description {
+  color: #333333;
+  text-align: justify;
 }
 
 .extra{
@@ -338,10 +391,6 @@
     margin-left: -15px;
   }
 
-  .product .col-sm-2{
-    width:20%;
-  }
-
   .navbar-header .search-box{
     display: none;
   }
@@ -384,6 +433,11 @@
   .product .item .img{
     min-height: 145px;
   }
+}
+
+@media(min-width: 992px){
+.product .col-md-2{
+  width:20%;
 }
 
 @media(min-width: 1200px){

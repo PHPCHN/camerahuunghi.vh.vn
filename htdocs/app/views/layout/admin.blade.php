@@ -11,7 +11,7 @@
             @yield('content')
           </div>
           <div class="news col-sm-3">
-            @include('admin.partial.menu');
+            @include('admin.partial.menu')
           </div>
         </div>
         @include('user.partial.footer')

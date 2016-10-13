@@ -1,18 +1,4 @@
-<p>2.0Mp, zoom quang 40x, zoom số 16x</p>
 
-<p>25/30fps@(1920x1080), 25/30/50/60fps@ 1.0Mp, 3DNR</p>
-
-<p>Hỗ trợ chức năng tuần tra th&ocirc;ng minh autotracking</p>
-
-<p>Hỗ trợ thẻ nhớ tối đa 64gb</p>
-
-<p>Hỗ trợ &acirc;m thanh 2 chiều.</p>
-
-<p>Tầm xa hồng ngoại: 500m</p>
-
-<p>Chuẩn chống nước v&agrave; bụi IP67</p>
-
-<p>Nhiệt độ hoạt động -40~+70&deg;C</p>
 
 2.0Mp, zoom quang 30x, zoom số 16x
 
@@ -61,4 +47,20 @@ DC12V, IP67
 
 Nhiệt độ hoạt động -30~+60°C
 
-<p>2.0Mp, zoom quang 40x, zoom số 16x</p><p>25/30fps@(1920x1080), 25/30/50/60fps@ 1.0Mp, 3DNR</p><p>Hỗ trợ chức năng tuần tra th&ocirc;ng minh autotracking</p><p>Hỗ trợ thẻ nhớ tối đa 64gb</p><p>Hỗ trợ &acirc;m thanh 2 chiều.</p><p>Tầm xa hồng ngoại: 500m</p><p>Chuẩn chống nước v&agrave; bụi IP67</p><p>Nhiệt độ hoạt động -40~+70&deg;C</p>
+---------------------------------------
+
+Đầu ghi hình HDCVI 4 kênh +1 kênh IP
+
+Kết nối Camera CVI/Analog/IP (5Mp)
+
+Chuẩn nén hình ảnh: H264, H264+
+
+Ghi hình ở độ phân giải 1080N/720P
+
+Cổng ra: VGA/HDMI
+
+Audio: 1 cổng vào 1 cổng ra, hỗ trợ âm thanh 2 chiều
+
+Hỗ trợ chuẩn Onvif 2.4
+
+Hỗ trợ 1 SATA x6TB, 2 USB 2.0

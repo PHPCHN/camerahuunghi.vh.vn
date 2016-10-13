@@ -5,11 +5,12 @@ class BaseAdminController extends BaseController
     /**
      * Instantiate a new AdminBaseController instance.
      */
-      public function __construct()
-      {
-          $this->beforeFilter('auth', array('except' => ['getLogin','postLogin']));
-          $this->beforeFilter('csrf', array('on' => 'post', 'except' => 'postLogin'));
-      }
+    public function __construct()
+    {
+        $this->beforeFilter('auth', array('except' => ['getLogin','postLogin']));
+        $this->beforeFilter('csrf', array('on' => 'post', 'except' => 'postLogin'));
+    }
+      
     /**
      * Save upload image from request file into uploads folder
      *
@@ -20,7 +21,7 @@ class BaseAdminController extends BaseController
      */
     public function imageUpload($path, $file)
     {
-        $dir = config("uploads.$path");
+        $dir = Config::get("uploads.$path");
         if (!is_dir($dir)) {
             mkdir($dir);
         }
@@ -42,7 +43,7 @@ class BaseAdminController extends BaseController
      */
     public function imageRemove($path, $filename)
     {
-        $dir = config("uploads.$path");
+        $dir = Config::get("uploads.$path");
         if (file_exists($dir.$filename)) {
             unlink($dir.$filename);
             return true;
