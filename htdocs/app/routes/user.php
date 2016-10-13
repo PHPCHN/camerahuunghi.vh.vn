@@ -10,6 +10,16 @@ Route::get('search', [
   'uses' => 'IndexController@search',
 ]);
 
+Route::get('tin-tuc', [
+  'as' => 'user.newsall',
+  'uses' => 'IndexController@news',
+]);
+
+Route::get('tin-tuc/{news}', [
+  'as' => 'user.news',
+  'uses' => 'DetailController@news',
+]);
+
 Route::get('{cate}', [
   'as' => 'user.category',
   'uses' => 'IndexController@category',

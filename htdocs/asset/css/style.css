@@ -180,7 +180,7 @@
 
 .product .item .code,
 .product-seen .item .code,
-.news .item .title {
+.new .item .title {
   font-weight: bold;
   color: #0065b2;
 }
@@ -229,7 +229,8 @@
   right: 15px;
 }
 
-.product .img-detail img{
+.product .img-detail img,
+.new .img-detail img{
   width:100%;
   border: 1px solid #ccc;
 }
@@ -246,7 +247,8 @@
   bottom: 15px;
 }
 
-.product .detail .title {
+.product .detail .title,
+.new .item-detail .title {
   font-size: 24px;
   font-weight: bolder;
   color: #0065b2;
@@ -309,15 +311,20 @@
 }
 
 .new h6, .new h3,
-.product-seen h6{
+.product-seen h6 {
   color: #0065b2;
   font-size: 16px;
   font-weight: bold;
   border-bottom: 2px solid #f58121;
 }
 
-.new .item{
+.new .item {
   border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.new .item:hover .title{
+  color: #f58121;
 }
 
 .new .item .img {
@@ -335,6 +342,30 @@
 .new .item .description {
   color: #333333;
   text-align: justify;
+}
+
+.new .item .date {
+  text-align: right;
+  color: #f58121;
+  font-size: 12px;
+}
+
+.new .more {
+  text-align: right;
+}
+
+.new .item-detail .description,
+.new .item-detail .content {
+  text-align: justify;
+}
+
+.new .item-detail .content img {
+  max-width: 100%;
+}
+
+.new .item-detail .date {
+  text-align: right;
+  color: #f58121;
 }
 
 .extra{

@@ -18,7 +18,7 @@
 @endsection
 @section('content')
 <div class="product row">
-  <h6><a href="/">TRANG CHỦ</6>
+  <h6><a href="/">TRANG CHỦ</a>
     -> <a href="/{{$category->keyword}}">{{$category->name}}</a>
     @if($sub_cate->id != $category->id)
     -> <a href="/{{$sub_cate->keyword}}">{{$sub_cate->name}}</a>

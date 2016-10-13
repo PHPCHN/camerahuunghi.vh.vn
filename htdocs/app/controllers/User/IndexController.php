@@ -46,6 +46,15 @@ class IndexController extends BaseUserController
         else return View::make('errors.404');
     }
 
+    public function news()
+    {
+      $column = ['id', 'title', 'description', 'image', 'created_at'];
+      $news_all = News::select($column)
+          ->orderBy('updated_at', 'desc')
+          ->paginate(News::PAGINATE);
+      return View::make('user.newsall')->with('news_all', $news_all);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

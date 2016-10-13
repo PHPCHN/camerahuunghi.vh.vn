@@ -31,9 +31,13 @@
       <div class="detail">
         <p class="title">{{$news->title}}<p>
         <p class="description"><?=strip_tags($news->description) ?></p>
+        <p class="date">{{date_format($news->created_at, 'd/m/Y G:iA')}}</p>
       </div>
     </div>
     </a>
   </div>
   @endforeach
+  <div class="more">
+    <a href="/tin-tuc">Xem tất cả</a>
+  </div>
 </div>

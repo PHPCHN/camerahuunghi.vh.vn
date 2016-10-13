@@ -39,6 +39,23 @@ class DetailController extends BaseUserController
       }
       return $in_seens;
     }
+
+    public function news($id) {
+      $column = [
+        'id',
+        'title',
+        'description',
+        'image',
+        'content',
+        'created_at',
+      ];
+      $news = News::select($column)->find($id);
+      if($news) {
+        return View::make('user.news')->with('news', $news);
+      }
+      else return View::make('errors.404');
+    }
+
     /**
      * Display a listing of the resource.
      *
