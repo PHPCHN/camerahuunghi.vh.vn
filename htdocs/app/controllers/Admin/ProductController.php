@@ -7,7 +7,7 @@ class ProductController extends BaseAdminController
         $this->beforeFilter('product_create', ['only' => 'store']);
         $this->beforeFilter('product_update', ['only' => 'update']);
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +29,9 @@ class ProductController extends BaseAdminController
      */
     public function create()
     {
-        $categories = Category::select(['id', 'name'])->where('sup_id', '>', 0)->get();
+        $categories = Category::select(['id', 'name'])
+                          ->orderBy('keyword')
+                          ->get();
         return View::make('admin.product.create')->with('categories', $categories);
     }
 
@@ -78,10 +80,13 @@ class ProductController extends BaseAdminController
         $column[] = 'content';
         $product = Product::select($column)->where('code', $id)->first();
         if($product) {
-          $category = Category::select(['id', 'sup_id'])->find($product->cate_id);
+          $category = Category::select(['id', 'sup_id'])
+                          ->find($product->cate_id);
           $options = Option::listby_cate($category);
           $product_opts = Option::product_opts($product);
-          $categories = Category::select(['id', 'name'])->where('sup_id', '>', 0)->get();
+          $categories = Category::select(['id', 'name'])
+                            ->orderBy('keyword')
+                            ->get();
           Session::flash('categories', $categories);
           Session::flash('options', $options);
           Session::flash('product_opts', $product_opts);

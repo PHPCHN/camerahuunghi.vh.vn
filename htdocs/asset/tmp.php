@@ -64,3 +64,46 @@ Audio: 1 cổng vào 1 cổng ra, hỗ trợ âm thanh 2 chiều
 Hỗ trợ chuẩn Onvif 2.4
 
 Hỗ trợ 1 SATA x6TB, 2 USB 2.0
+
+$query->whereIn('id', function($query) use ($keys){
+  $query->from('product_seos')
+      ->whereIn('seo_id', function($query) use ($keys){
+        $query->from('seos')->where(function($query) use ($keys){
+          foreach($keys as $key) {
+            $query->orWhere('keyword', 'like', '%'.$key.'%')
+              ->orWhereRaw("'$key' like concat('%',keyword,'%')");
+            }
+        })->lists('id');
+      })->groupBy('product_id')
+      ->havingRaw('count(product_id)>1')
+      ->lists('product_id');
+});
+
+->orWhere(function($query) use ($keys){
+  foreach($keys as $key) {
+    $query->whereIn('id', function($query) use ($key){
+      $query->from('products')
+        ->join('categories', 'categories.id', '=', 'products.cate_id')
+        ->where('keyword', 'like', '%'.$key.'%')
+        ->orWhereRaw("'$key' like concat('%',keyword,'%')")
+        ->select(['products.id'])->lists('id');
+    });
+}
+});
+
+->where(function($query) use ($keys){
+  foreach($keys as $key) {
+    $query->orWhere('code', 'like', '%'.$key.'%')
+      ->orWhereRaw("'$key' like concat('%',code,'%')");
+    }
+  })->where(function($query) use ($keys){
+    foreach($keys as $key) {
+      $query->orWhereIn('id', function($query) use ($key){
+        $query->from('products')
+          ->join('categories', 'categories.id', '=', 'products.cate_id')
+          ->where('keyword', 'like', '%'.$key.'%')
+          ->orWhereRaw("'$key' like concat('%',keyword,'%')")
+          ->select(['products.id'])->lists('id');
+      });
+  }
+  });

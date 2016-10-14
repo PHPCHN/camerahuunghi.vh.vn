@@ -21,6 +21,9 @@
 @endif
 <div class="new row">
   <h6>TIN TỨC</h6>
+  <div class="more">
+    <a href="/tin-tuc">Xem tất cả</a>
+  </div>
   @foreach (Session::get('news_list') as $news)
   <div class="item">
     <a href="/tin-tuc/{{$news->id}}">
@@ -37,7 +40,4 @@
     </a>
   </div>
   @endforeach
-  <div class="more">
-    <a href="/tin-tuc">Xem tất cả</a>
-  </div>
 </div>

@@ -237,26 +237,27 @@ class Product extends Model
     public static function search() {
       $keys = explode(' ', Input::get('search'));
       $product_sort_ids = self::listby_opt();
-      $products = self::select(self::column())
-        ->where(function($query) use ($keys){
-          $query->whereIn('id', function($query) use ($keys){
-            $query->from('product_seos')
-                ->whereIn('seo_id', function($query) use ($keys){
-                  $query->from('seos')->where(function($query) use ($keys){
-                    foreach($keys as $key) {
-                      $query->orWhere('keyword', 'like', '%'.$key.'%')
-                        ->orWhereRaw("'$key' like concat('%',keyword,'%')");
-                      }
-                  })->lists('id');
-                })->groupBy('product_id')
-                ->havingRaw('count(product_id)>1')
-                ->lists('product_id');
-          });
-          foreach($keys as $key) {
-            $query->orWhere('code', 'like', '%'.$key.'%')
-              ->orWhereRaw("'$key' like concat('%',code,'%')");
-          }
+      $products = self::select(self::column());
+      foreach ($keys as $key) {
+        $products = $products->whereIn('id', function($query) use ($key){
+          $query->from('products')
+            ->where('code', 'like', '%'.$key.'%')
+            ->orWhereIn('id', function($query) use ($key){
+              $query->from('products')
+                ->join('categories', 'products.cate_id', '=', 'categories.id')
+                ->where('keyword', 'like', '%'.$key.'%')
+                ->select(['products.id'])->lists('id');
+            })
+            ->orWhereIn('id', function($query) use ($key){
+              $query->from('product_opts')
+                ->join('option_vals', 'product_opts.opt_val_id', '=', 'option_vals.id')
+                ->where('keyword', 'like', '%'.$key.'%')
+                ->whereRaw(strlen($key).'>2')
+                ->select(['product_id'])->lists('id');
+            })
+            ->lists('id');
         });
+      }
       if($product_sort_ids!==null)
         $products = $products->whereIn('id', $product_sort_ids);
       $products = self::listby_sort($products, Input::get('sort'))

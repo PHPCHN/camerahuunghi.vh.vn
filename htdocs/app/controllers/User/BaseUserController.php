@@ -13,6 +13,8 @@ class BaseUserController extends BaseController
             ->orderBy('updated_at', 'desc')
             ->take(10)->get();
         Session::flash('news_list', $news_list);
+        MechStatistik::init();
+        Session::flash('mechs', MechStatistik::mechs());
     }
 
     /**

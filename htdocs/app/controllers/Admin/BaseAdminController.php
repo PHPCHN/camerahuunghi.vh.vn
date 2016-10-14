@@ -7,10 +7,11 @@ class BaseAdminController extends BaseController
      */
     public function __construct()
     {
+        Session::flash('mechs', MechStatistik::mechs());
         $this->beforeFilter('auth', array('except' => ['getLogin','postLogin']));
         $this->beforeFilter('csrf', array('on' => 'post', 'except' => 'postLogin'));
     }
-      
+
     /**
      * Save upload image from request file into uploads folder
      *
