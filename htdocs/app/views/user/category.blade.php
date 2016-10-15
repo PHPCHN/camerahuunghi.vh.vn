@@ -3,7 +3,7 @@
 $sup_cate = Session::get('sup_cate');
 $category = Session::get('category'); ?>
 @section('title')
-{{$category->name}},
+{{$category->name}} |
 @endsection
 @section('description')
 {{$category->name}},

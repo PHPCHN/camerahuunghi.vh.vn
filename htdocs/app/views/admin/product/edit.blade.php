@@ -89,5 +89,8 @@
 @section('js')
 <script src="http://cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
 <script>CKEDITOR.replace('description'); </script>
-<script>CKEDITOR.replace('content'); </script>
+<script>CKEDITOR.replace('content', {
+  filebrowserImageBrowseUrl: "{{asset('/images')}}",
+  filebrowserImageUploadUrl: "{{asset('/uploadImage?_token='.csrf_token())}}",
+}); </script>
 @endsection

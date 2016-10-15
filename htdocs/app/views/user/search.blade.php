@@ -1,7 +1,7 @@
 @extends('layout.user')
 <?php $input_opts = Session::get('input_opts') ?>
 @section('title')
-Tìm kiếm,
+Tìm kiếm |
 @endsection
 @section('description')
 Tìm kiếm,

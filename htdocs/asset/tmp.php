@@ -1,3 +1,5 @@
+{"error":{"number":1,"message":"The PHP installation does not meet the minimum system requirements for CKFinder. Missing PHP extensions: GD. Please refer to CKFinder documentation for more details."}}
+
 
 
 2.0Mp, zoom quang 30x, zoom số 16x

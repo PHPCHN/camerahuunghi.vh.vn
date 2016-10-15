@@ -15,6 +15,16 @@ Route::get('logout', [
   'uses' => 'AuthController@getLogout',
 ]);
 
+Route::get('images', [
+  'as' => 'images',
+  'uses' => 'SliderController@browseImage',
+]);
+
+Route::post('uploadImage', [
+  'as' => 'upload.image',
+  'uses' => 'SliderController@uploadImage',
+]);
+
 Route::get('admin', [
   'as' => 'admin',
   'uses' => 'AuthController@index',

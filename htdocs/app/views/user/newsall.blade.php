@@ -1,6 +1,6 @@
 @extends('layout.user')
 @section('title')
-Tin tức,
+Tin tức |
 @endsection
 @section('description')
 Tin tức,

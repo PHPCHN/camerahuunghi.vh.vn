@@ -1,6 +1,5 @@
 @extends('layout.user')
 @section('title')
-CAMERA QUAN SÁT,
 @endsection
 @section('description')
 CAMERA QUAN SÁT,

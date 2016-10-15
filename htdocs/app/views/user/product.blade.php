@@ -3,7 +3,7 @@
       $category = Session::get('category');
       $product = Session::get('product'); ?>
 @section('title')
-{{$product->name}},
+{{$product->name}} |
 @endsection
 @section('description')
 {{$product->name}},
