@@ -5,6 +5,8 @@
     <tr><td>
     <a href="/admin/product">Quản lý Sản Phẩm</a></td></tr>
     <tr><td>
+    <a href="/admin/product">Quản lý Tin Tức</a></td></tr>
+    <tr><td>
     <a href="/logout">Logout</a></td></tr>
   </table>
   @endif

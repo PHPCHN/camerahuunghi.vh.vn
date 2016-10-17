@@ -20,3 +20,15 @@
     </ul>
   </div>
 </div>
+<div class="about-b row">
+  <?php
+    $banks = array(
+      'acb', 'anz', 'bidv', 'hsbc', 'mart', 'masu',
+      'mb', 'scd', 'tech', 'vcom', 'vtin',
+    );
+  ?>
+  <image class="bkard" alt="bkard" src="{{asset('asset/img/bkard.png')}}">
+  @foreach($banks as $bank)
+    <image alt="{{$bank}}" src="{{asset('asset/img/'.$bank.'.png')}}">
+  @endforeach
+</div>

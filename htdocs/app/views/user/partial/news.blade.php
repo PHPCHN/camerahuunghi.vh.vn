@@ -7,6 +7,14 @@
     <div class="row">
       <div class="img col-xs-6 col-sm-4">
         <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
+        <div class="new-pr">
+          @if($product->new)
+          <img alt="newpr" src="{{asset('asset/img/newpr.png')}}" >
+          @endif
+          @if($product->pro)
+          <img alt="prpr" src="{{asset('asset/img/prpr.png')}}" >
+          @endif
+        </div>
       </div>
       <div class="detail col-xs-6 col-sm-8">
         <p class="name">{{$product->name}}<p>

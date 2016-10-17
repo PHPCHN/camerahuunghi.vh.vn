@@ -33,7 +33,8 @@ class MechStatistik extends Eloquent {
   ];
 
   public static function init() {
-    $ip = $_SERVER['REMOTE_ADDR']; // Getting the user's computer IP
+    //$ip = $_SERVER['REMOTE_ADDR']; // Getting the user's computer IP
+		$ip = csrf_token();
     $tanggal = date("y-m-d"); // Getting the current date
     $waktu  = time();
     $count = self::where('ip', $ip)->where('tanggal', $tanggal)->count();
