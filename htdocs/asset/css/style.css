@@ -51,6 +51,10 @@
   margin-left: 1px;
 }
 
+.ex-link .ct-icon {
+  margin-right: 15px;
+}
+
 .menu .navbar-header, #menu {
   background-color: #0065b2;
 }
@@ -163,6 +167,22 @@
   border-bottom: 2px solid #f58121;
 }
 
+.product .nav li a {
+  color: #555;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.product .nav .main a {
+  font-size: 16px;
+}
+
+.product .nav li a:hover,
+.product .nav li.active a,
+.product .nav li.main a {
+  color: #0065b2;
+}
+
 .product .item .row {
   min-height: 100px;
   border: 1px solid #ccc;
@@ -184,8 +204,8 @@
 .product .item .new-pr,
 .product .img-detail .new-pr {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 10px;
+  top: 10px;
 }
 
 .product-seen .item .new-pr {
@@ -195,7 +215,7 @@
 }
 
 .product .img-detail .new-pr {
-  right: 30px;
+  right: 25px;
 }
 
 .product .item .new-pr img,
@@ -233,8 +253,7 @@
 }
 
 .product .item .p2 {
-  padding-top: 15px;
-  width: 125%;
+  padding-top: 10px;
   z-index: 1000;
   background-color: #fff;
   position: absolute;
@@ -242,6 +261,7 @@
   left: 15px;
   top: 0;
   bottom: 0;
+  right: -30%;
 }
 
 .product .item .exp .btn {
@@ -256,8 +276,8 @@
 
 .product .item .p2 .exp {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 10px;
 }
 
 .product .img-detail img,
@@ -268,18 +288,19 @@
 
 .product .img-detail .g-plus {
   position: absolute;
-  left: 30px;
-  bottom: 10px;
+  left: 25px;
+  bottom: 5px;
 }
 
 .product .img-detail .fb-like {
   position: absolute;
-  right: 30px;
-  bottom: 15px;
+  right: 25px;
+  bottom: 10px;
 }
 
 .product .detail .title,
 .new .item-detail .title {
+  margin-top: 10px;
   font-size: 24px;
   font-weight: bolder;
   color: #0065b2;
@@ -288,6 +309,10 @@
 
 .product .detail .price {
   font-size: 18px;
+  font-weight: bold;
+}
+
+.product .detail .order button {
   font-weight: bold;
 }
 
@@ -510,6 +535,11 @@
     width: 36%;
   }
 
+  .product .item .row {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .product .item .img {
     min-height: 110px;
   }
@@ -549,5 +579,9 @@
 
   .product .item .img {
     min-height: 160px;
+  }
+
+  .product .item .p2 {
+    right: 15px;
   }
 }

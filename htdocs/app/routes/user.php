@@ -10,6 +10,11 @@ Route::get('search', [
   'uses' => 'IndexController@search',
 ]);
 
+Route::post('dat-hang', [
+  'as' => 'user.order',
+  'uses' => 'OrderController@order',
+]);
+
 Route::get('tin-tuc', [
   'as' => 'user.newsall',
   'uses' => 'IndexController@news',

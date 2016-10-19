@@ -25,7 +25,7 @@
     @endif
     -> <a href="/{{$category->keyword}}/{{$product->code}}">{{$product->code}}</a>
   </h1>
-  <div class="img-detail col-xs-6">
+  <div class="img-detail col-sm-6">
     <div class="new-pr">
       @if($product->new)
       <img alt="newpr" src="{{asset('asset/img/newpr.png')}}" >
@@ -42,7 +42,7 @@
     <div class="fb-like" data-href="{{asset($category->keyword.'/'.$product->code)}}"
     data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
   </div>
-  <div class="detail col-xs-6">
+  <div class="detail col-sm-6">
     <h1 class="title">{{$product->name}}</h1>
     <p class="price">Giá: <span class="price-sp">{{number_format($product->price,0,',','.')}} VND</span></p>
     <p>Thương hiệu: {{$product->get_opt_th()}}</p>
@@ -53,6 +53,7 @@
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#description">THÔNG TIN CHI TIẾT</a></li>
       <li><a data-toggle="tab" href="#comment">BÌNH LUẬN</a></li>
+      <li><a data-toggle="tab" href="#order">ĐẶT MUA</a></li>
     </ul>
 
     <div class="tab-content">
@@ -61,6 +62,10 @@
         <?=$product->content ?>
       </div>
       <div id="comment" class="tab-pane fade">
+        <div class="fb-comments" data-href="{{asset($category->keyword.'/'.$product->code)}}" data-numposts="5" data-mobile="true"></div>
+      </div>
+      <div id="order" class="tab-pane fade">
+        @include('user.partial.order')
       </div>
     </div>
   </div>

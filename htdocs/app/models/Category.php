@@ -29,6 +29,16 @@ class Category extends Model
         'sup_id',
     ];
 
+    public static function listfor_homes() {
+      $home_categories = array();
+      $categories = self::select(['id', 'name', 'keyword', 'sup_id'])
+          ->orderBy('sup_id')->get();
+      foreach($categories as $category) {
+          $home_categories[$category->id] = $category;
+      }
+      return $home_categories;
+    }
+
     public static function getby_keyword($keyword) {
       $cates = self::select(['id', 'name', 'keyword', 'sup_id'])->where('keyword', $keyword)->get();
       if($cates->count())

@@ -49,6 +49,7 @@ class Product extends Model
         'new',
         'pro',
         'home',
+        'tab',
     ];
 
     public static function column() {
@@ -64,6 +65,38 @@ class Product extends Model
          'code',
          'cate_id',
        ];
+    }
+
+    public static function listfor_homes() {
+      $column = self::column();
+      $column[] = 'home';
+      $column[] = 'tab';
+      $home_products = array();
+      $home_products['top'] = array();
+      $home_categories = Category::listfor_homes();
+      $home_products['categories'] = $home_categories;
+      $products = self::select($column)
+          ->whereRaw('(top + home + tab) > 0')->get();
+      foreach($products as $product) {
+        $cate = $home_categories[$product->cate_id];
+        if($cate->sup_id > 0)
+          $cate = $home_categories[$cate->sup_id];
+        $product->link = $cate->keyword.'/'.$product->code;
+        if($product->top == self::ONTOP) {
+          $home_products['top'][] = $product;
+        }
+        if($product->home == self::ONHOME){
+          if(!isset($home_products[$cate->id]))
+            $home_products[$cate->id] = array();
+          $home_products[$cate->id][] = $product;
+        }
+        if($product->tab == self::ONHOME){
+          if(!isset($home_products[$product->cate_id]))
+            $home_products[$product->cate_id] = array();
+          $home_products[$product->cate_id][] = $product;
+        }
+      }
+      return $home_products;
     }
 
     public function update_opt($options) {

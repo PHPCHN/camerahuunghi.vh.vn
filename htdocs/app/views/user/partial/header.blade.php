@@ -4,11 +4,13 @@
   </div>
   <div class="col-xs-12">
     <div class="ex-link row">
-      <a href="https://www.facebook.com/LapdatcameraquansatchatluongtaiDaNang/">
+      <a href="{{asset('/dat-hang')}}">
+        <img class="ct-icon" alt="ct-icon" src="{{asset('asset/img/cart-c.png')}}"></a>
+      <a href="https://www.facebook.com/LapdatcameraquansatchatluongtaiDaNang/" target="_blank">
         <img alt="fb-icon" src="{{asset('asset/img/fb-icon.png')}}"></a>
       <a href="#">
         <img alt="tw-icon" src="{{asset('asset/img/tw-icon.png')}}"></a>
-      <a href="https://plus.google.com/117115317172514449488?rel=author">
+      <a href="https://plus.google.com/117115317172514449488?rel=author" target="_blank">
         <img alt="gg-icon" src="{{asset('asset/img/gg-icon.png')}}"></a>
     </div>
   </div>

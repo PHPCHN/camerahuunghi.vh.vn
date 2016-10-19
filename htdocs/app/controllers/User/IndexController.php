@@ -9,11 +9,12 @@ class IndexController extends BaseUserController
      */
     public function index()
     {
-        $top = Product::liston_top();
+        /*$top = Product::liston_top();
         $products = Product::listby_mcate();
         Session::flash('top_products', $top);
-        Session::flash('main_products', $products);
-        return View::make('user.home');
+        Session::flash('main_products', $products);*/
+        $home_products = Product::listfor_homes();
+        return View::make('user.home')->with('products', $home_products);
     }
 
     public function search() {
