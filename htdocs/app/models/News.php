@@ -6,6 +6,34 @@ class News extends Model
     const UPLOAD_KEY = 'news';
     const PAGINATE = 20;
 
+    public static function const_about() {
+      return [
+        'gioi-thieu',
+      ];
+    }
+
+    public static function const_policies() {
+      return [
+        'uu-dai',
+        'bao-hanh',
+        'van-chuyen',
+        'doi-tra-hang',
+        'bao-mat-thong-tin',
+      ];
+    }
+
+    public static function const_recruit() {
+      return [
+        'tuyen-dung',
+      ];
+    }
+
+    public static function const_support() {
+      return [
+        'ho-tro',
+      ];
+    }
+
     /**
      * The database table used by the model.
      *
@@ -30,6 +58,7 @@ class News extends Model
         'description',
         'image',
         'content',
+        'keyword',
     ];
 
     public function image_link() {

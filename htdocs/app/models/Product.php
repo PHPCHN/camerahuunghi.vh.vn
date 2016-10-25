@@ -140,12 +140,20 @@ class Product extends Model
       return $count;
     }
 
+    private function count_tab() {
+      $count = Product::where('cate_id', $this->cate_id)
+                  ->where('tab', 1)->count('id');
+      return $count;
+    }
+
     public function count_attr($attr) {
       $count = 0;
       if($attr == 'top')
         $count = self::where('top', 1)->count('id');
       else if($attr == 'home')
         $count = $this->count_home();
+      else if($attr == 'tab')
+        $count = $this->count_tab();
       return $count;
     }
 

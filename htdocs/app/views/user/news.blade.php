@@ -16,12 +16,12 @@ Tin tức,
 <div class="new row">
   <h6>TIN TỨC</h6>
   <div class="row">
-    <div class="img-detail col-xs-6 col-sm-4">
-      <img alt="{{$news->image}}" src="{{asset($news->image_link())}}" >
-    </div>
     <div class="item-detail">
       <p class="title">{{$news->title}}</p>
       <p class="date">{{date_format($news->created_at, 'd/m/Y G:iA')}}</p>
+      <div class="img-detail">
+        <img alt="{{$news->image}}" src="{{asset($news->image_link())}}" >
+      </div>
       <div class="description"><?=$news->description ?></div>
       <div class="content"><?=$news->content ?></div>
     </div>

@@ -35,7 +35,7 @@ return array(
 	"digits_between"       => "The :attribute must be between :min and :max digits.",
 	"email"                => "The :attribute must be a valid email address.",
 	"exists"               => "The selected :attribute is invalid.",
-	"image"                => "The :attribute must be an image.",
+	"image"                => ":attribute nhập vào không phải là ảnh.",
 	"in"                   => "The selected :attribute is invalid.",
 	"integer"              => "The :attribute must be an integer.",
 	"ip"                   => "The :attribute must be a valid IP address.",
@@ -53,9 +53,11 @@ return array(
 		"array"   => "The :attribute must have at least :min items.",
 	),
 	"not_in"               => "The selected :attribute is invalid.",
-	"numeric"              => "The :attribute must be a number.",
+	"numeric"              => ":attribute phải là số.",
+	"phone"								 => "Số điện thoại không hợp lệ.",
+	"ql"									 => "Nhập số nguyên >0",
 	"regex"                => "The :attribute format is invalid.",
-	"required"             => "The :attribute field is required.",
+	"required"             => "Phải nhập vào :attribute.",
 	"required_if"          => "The :attribute field is required when :other is :value.",
 	"required_with"        => "The :attribute field is required when :values is present.",
 	"required_with_all"    => "The :attribute field is required when :values is present.",
@@ -68,7 +70,7 @@ return array(
 		"string"  => "The :attribute must be :size characters.",
 		"array"   => "The :attribute must contain :size items.",
 	),
-	"unique"               => "The :attribute has already been taken.",
+	"unique"               => ":attribute bị trùng lặp.",
 	"url"                  => "The :attribute format is invalid.",
 
 	/*
@@ -99,6 +101,18 @@ return array(
 	|
 	*/
 
-	'attributes' => array(),
+	'attributes' => array(
+		'name' => 'Tên',
+		'phone' => 'Điện thoại',
+		'address' => 'Địa chỉ',
+		'comment' => 'Ghi chú',
+		'upload' => 'File',
+		'title' => 'Tiêu đề',
+		'description' => 'Mô tả',
+		'content' => 'Chi tiết',
+		'image' => 'Ảnh',
+		'code' => 'Mã SP',
+		'price' => 'Đơn giá',
+	),
 
 );

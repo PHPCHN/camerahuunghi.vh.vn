@@ -100,7 +100,7 @@ CAMERA QUAN SÁT,
     </div>
     @foreach ($products['categories'] as $sub_cate)
     @if($sub_cate->sup_id == $category->id)
-      <div id="{{$sub_cate->keyword}}" class="tab-pane fade in active">
+      <div id="{{$sub_cate->keyword}}" class="tab-pane fade">
         @if(isset($products[$sub_cate->id]))
         @foreach ($products[$sub_cate->id] as $product)
         <div class="item col-xs-6 col-sm-3 col-md-2">

@@ -9,30 +9,34 @@
   enctype="multipart/form-data" method="post">
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
   <input type="hidden" name="cate_id" value="0" />
-  <div class="form-group">
-   <label class="control-label col-sm-2" for="code">Tiêu đề:</label>
+  <div class="form-group {{NewsCreateFilter::has_error('title')}}">
+   <label class="control-label col-sm-2" for="title">Tiêu đề:</label>
    <div class="col-sm-8">
      <input type="text" name="title" class="form-control">
+     <p>{{NewsCreateFilter::error('title')}}</p>
    </div>
   </div>
-  <div class="form-group">
+  <div class="form-group {{NewsCreateFilter::has_error('description')}}">
    <label class="control-label col-sm-2" for="description">Mô tả:</label>
    <div class="col-sm-8">
      <textarea id="description" name="description" class="form-control" >
      </textarea>
+     <p>{{NewsCreateFilter::error('description')}}</p>
    </div>
   </div>
-  <div class="form-group">
-   <label class="control-label col-sm-2" for="description">Chi tiết:</label>
+  <div class="form-group {{NewsCreateFilter::has_error('content')}}">
+   <label class="control-label col-sm-2" for="content">Chi tiết:</label>
    <div class="col-sm-8">
      <textarea id="content" name="content" class="form-control" >
      </textarea>
+     <p>{{NewsCreateFilter::error('content')}}</p>
    </div>
   </div>
-  <div class="form-group">
+  <div class="form-group {{NewsCreateFilter::has_error('image')}}">
    <label class="control-label col-sm-2" for="image">Ảnh:</label>
    <div class="col-sm-8">
      <input type="file" name="image" class="form-control" accept="image/*">
+     <p>{{NewsCreateFilter::error('image')}}</p>
    </div>
   </div>
   <div class="form-group">

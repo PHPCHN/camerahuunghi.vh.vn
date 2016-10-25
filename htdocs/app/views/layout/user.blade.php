@@ -7,11 +7,11 @@
       <div class="wrapper container-fluid">
         @include('user.partial.header')
         @yield('headcontent')
-        <div class="content row">
+        <div id="main-content" class="content row">
           <div class="products col-sm-9">
             @yield('content')
           </div>
-          <div class="news col-sm-3">
+          <div id="news" class="news col-sm-3">
             @include('user.partial.news')
           </div>
         </div>

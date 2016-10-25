@@ -1,12 +1,29 @@
 <div class="about row">
   <div class="item col-xs-6 col-sm-3">
     <p class="h6">GIỚI THIỆU VỀ CÔNG TY</p>
+    <ul>
+    <li><a href="#">Giới thiệu</a></li>
+    <li><a href="#">Chính sách ưu đãi</a></li>
+    <li><a href="#">Chính sách bảo hành</a></li>
+    <li><a href="#">Chính sách vận chuyển</a></li>
+    <li><a href="#">Chính sách đổi trả hàng</a></li>
+    <li><a href="#">Chính sách bảo mật thông tin</a></li>
+    </ul>
   </div>
   <div class="item col-xs-6 col-sm-3">
     <p class="h6">THÔNG TIN TUYỂN DỤNG</p>
+    <ul>
+    <li><a href="#">Tuyển nhân viên Marketing Online tại Đà Nẵng</a></li>
+    <li><a href="#">Tuyển nhân viên Kỹ thuật tại Đà Nẵng</a></li>
+    </ul>
   </div>
   <div class="item col-xs-6 col-sm-3">
     <p class="h6">HỖ TRỢ KHÁCH HÀNG</p>
+    <ul>
+    <li><a href="#">Hỗ trợ kỹ thuật</a></li>
+    <li><a href="#">Tư vấn giải pháp - thiết bị</a></li>
+    <li><a href="#">Download tài liệu - phần mềm</a></li>
+    </ul>
   </div>
   <div class="item col-xs-6 col-sm-3">
     <p class="h6">THỐNG KÊ TRUY CẬP</p>

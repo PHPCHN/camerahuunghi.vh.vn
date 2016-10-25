@@ -9,12 +9,10 @@
         <strong>Error! </strong>{{ Session::get('flash_error') }}
     </div>
 @elseif (Session::has('flash_error_valid'))
-  @foreach(Session::get('flash_error_valid')->all() as $message)
-    <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Error! </strong>{{ $message }}
-    </div>
-  @endforeach
+<div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Error! </strong>{{ trans('messages.validation_error') }}
+</div>
 @elseif (Session::has('flash_info'))
     <div class="alert alert-info">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

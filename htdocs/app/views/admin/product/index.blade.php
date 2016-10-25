@@ -15,10 +15,11 @@
       <th>STT</th>
       <th>Mã SP</th>
       <th>Danh mục</th>
-      <th>Top bán chạy</th>
-      <th>Trang chủ</th>
-      <th>SP mới</th>
-      <th>Khuyến mãi</th>
+      <th>Top</th>
+      <th>Home</th>
+      <th>Tab</th>
+      <th>New</th>
+      <th>KM</th>
       <th>Sửa TT</th>
     </thead>
     @foreach($products as $index => $product)
@@ -38,6 +39,13 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}" />
             <button type="submit" class="btn btn-{{$product->home==1?'danger':'info'}}">
               {{$product->home==1?'Down':'Up'}}</button>
+          </form>
+        </td>
+        <td>
+          <form role="form" method="post" action="/admin/product/{{$product->code}}/tab">
+            <input type="hidden" name="_token" value="{{csrf_token()}}" />
+            <button type="submit" class="btn btn-{{$product->tab==1?'danger':'info'}}">
+              {{$product->tab==1?'Down':'Up'}}</button>
           </form>
         </td>
         <td>

@@ -43,6 +43,11 @@ Route::group(['prefix' => 'admin'], function () {
     'uses' => 'ProductController@set_home',
   ]);
 
+  Route::post('product/{product}/tab', [
+    'as' => 'admin.product.tab',
+    'uses' => 'ProductController@set_tab',
+  ]);
+
   Route::post('product/{product}/new', [
     'as' => 'admin.product.new',
     'uses' => 'ProductController@set_new',

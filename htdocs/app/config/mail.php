@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	'host' => 'smtp.gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,10 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'webmaster.daihuunghi.vn@gmail.com', 'name' => 'Website Camera Huu Nghi'),
+	'to' => array('address' => 'camerahuunghi@gmail.com', 'name' => 'Camera Đà Nẵng'),
+	//'to' => array('address' => 'khdng0424@gmail.com', 'name' => 'PianDV'),
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +83,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'webmaster.daihuunghi.vn@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +96,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'huunghi@123',
 
 	/*
 	|--------------------------------------------------------------------------

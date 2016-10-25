@@ -17,8 +17,8 @@ class ProductController extends BaseAdminController
     {
         $categories = Category::listof_names();
         Session::flash('categories', $categories);
-        $products = Product::select(['code', 'cate_id', 'top', 'new', 'pro', 'home'])
-                        ->orderBy('code')->paginate(Product::PAGINATE);
+        $products = Product::select(['code', 'cate_id', 'top', 'new', 'pro', 'home', 'tab'])
+                        ->orderBy('cate_id')->paginate(Product::PAGINATE);
         return View::make('admin.product.index')->with('products', $products);
     }
 
@@ -140,6 +140,10 @@ class ProductController extends BaseAdminController
 
     public function set_home($id) {
         return $this->set_attr_bool($id, 'home');
+    }
+
+    public function set_tab($id) {
+        return $this->set_attr_bool($id, 'tab');
     }
 
     public function set_new($id) {

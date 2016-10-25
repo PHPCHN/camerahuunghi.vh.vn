@@ -9,4 +9,16 @@ class BaseFilter {
       return Redirect::back();
 		}
   }
+
+  public static function has_error($field) {
+    if(Session::has('flash_error_valid')
+      && Session::get('flash_error_valid')->has($field))
+      return 'has-error';
+  }
+
+  public static function error($field) {
+    if(Session::has('flash_error_valid')
+      && Session::get('flash_error_valid')->has($field))
+      return Session::get('flash_error_valid')->first($field);
+  }
 }

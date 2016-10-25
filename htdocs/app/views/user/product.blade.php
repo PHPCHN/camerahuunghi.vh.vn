@@ -24,7 +24,8 @@
     -> <a href="/{{$sub_cate->keyword}}">{{$sub_cate->name}}</a>
     @endif
     -> <a href="/{{$category->keyword}}/{{$product->code}}">{{$product->code}}</a>
-  </h1>
+  </h6>
+  @include('layout.partial.flash')
   <div class="img-detail col-sm-6">
     <div class="new-pr">
       @if($product->new)
@@ -51,20 +52,20 @@
   </div>
   <div class="detail-exp col-xs-12">
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#description">THÔNG TIN CHI TIẾT</a></li>
+      <li><a data-toggle="tab" href="#description">THÔNG TIN CHI TIẾT</a></li>
       <li><a data-toggle="tab" href="#comment">BÌNH LUẬN</a></li>
-      <li><a data-toggle="tab" href="#order">ĐẶT MUA</a></li>
+      <li class="active"><a data-toggle="tab" href="#order">ĐẶT MUA</a></li>
     </ul>
 
     <div class="tab-content">
-      <div id="description" class="tab-pane fade in active">
+      <div id="description" class="tab-pane fade">
         <h3 class="title">{{$product->name}}</h3>
         <?=$product->content ?>
       </div>
       <div id="comment" class="tab-pane fade">
         <div class="fb-comments" data-href="{{asset($category->keyword.'/'.$product->code)}}" data-numposts="5" data-mobile="true"></div>
       </div>
-      <div id="order" class="tab-pane fade">
+      <div id="order" class="tab-pane fade in active">
         @include('user.partial.order')
       </div>
     </div>
@@ -119,7 +120,7 @@
   @endif
   <script src="https://apis.google.com/js/platform.js" async defer>
   {lang: 'vi'}
-</script>
+  </script>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -127,4 +128,5 @@
     js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
+  <script src="{{asset('asset/js/order.js')}}"></script>
 @endsection

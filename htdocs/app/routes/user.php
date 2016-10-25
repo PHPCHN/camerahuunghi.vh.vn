@@ -5,13 +5,22 @@ Route::get('/', [
   'uses' => 'IndexController@index',
 ]);
 
+Route::get('phpinfo', function(){
+  phpinfo();
+});
+
 Route::get('search', [
   'as' => 'user.search',
   'uses' => 'IndexController@search',
 ]);
 
-Route::post('dat-hang', [
+Route::get('dat-hang', [
   'as' => 'user.order',
+  'uses' => 'OrderController@index',
+]);
+
+Route::post('dat-hang', [
+  'as' => 'user.order-post',
   'uses' => 'OrderController@order',
 ]);
 
