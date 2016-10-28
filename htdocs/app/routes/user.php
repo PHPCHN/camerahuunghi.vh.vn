@@ -5,9 +5,25 @@ Route::get('/', [
   'uses' => 'IndexController@index',
 ]);
 
-Route::get('phpinfo', function(){
-  phpinfo();
-});
+Route::get('gioi-thieu', [
+  'as' => 'user.about',
+  'uses' => 'DetailController@abouts',
+]);
+
+Route::get('chinh-sach-{keyword}', [
+  'as' => 'user.policy',
+  'uses' => 'DetailController@policies',
+]);
+
+Route::get('tuyen-{keyword}', [
+  'as' => 'user.recruit',
+  'uses' => 'DetailController@recruits',
+]);
+
+Route::get('ho-tro-{keyword}', [
+  'as' => 'user.support',
+  'uses' => 'DetailController@supports',
+]);
 
 Route::get('search', [
   'as' => 'user.search',

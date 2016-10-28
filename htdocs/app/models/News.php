@@ -8,6 +8,15 @@ class News extends Model
 
     public static function const_about() {
       return [
+        'gioi-thieu' => 'const_abouts',
+        'chinh-sach' => 'const_policies',
+        'tuyen-dung' => 'const_recruits',
+        'ho-tro' => 'const_supports',
+      ];
+    }
+
+    public static function const_abouts() {
+      return [
         'gioi-thieu',
       ];
     }
@@ -22,15 +31,18 @@ class News extends Model
       ];
     }
 
-    public static function const_recruit() {
+    public static function const_recruits() {
       return [
-        'tuyen-dung',
+        'nhan-vien-marketing-online',
+        'nhan-vien-ky-thuat',
       ];
     }
 
-    public static function const_support() {
+    public static function const_supports() {
       return [
-        'ho-tro',
+        'ky-thuat',
+        'tu-van-giai-phap-thiet-bi',
+        'download-tai-lieu-phan-mem',
       ];
     }
 
@@ -60,6 +72,17 @@ class News extends Model
         'content',
         'keyword',
     ];
+
+    public static function column() {
+      return [
+        'id',
+        'title',
+        'description',
+        'image',
+        'content',
+        'created_at',
+      ];
+    }
 
     public function image_link() {
       return Config::get('uploads.'.self::UPLOAD_KEY).$this->image;

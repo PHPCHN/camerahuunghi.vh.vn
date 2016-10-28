@@ -41,19 +41,38 @@ class DetailController extends BaseUserController
     }
 
     public function news($id) {
-      $column = [
-        'id',
-        'title',
-        'description',
-        'image',
-        'content',
-        'created_at',
-      ];
-      $news = News::select($column)->find($id);
+      $news = News::select(News::column())->whereNull('keyword')->find($id);
       if($news) {
         return View::make('user.news')->with('news', $news);
       }
       else return View::make('errors.404');
+    }
+
+    private function about($keyword, $type) {
+      $about = News::const_about()[$type];
+      $news = News::select(News::column())
+        ->whereIn('keyword', News::$about())
+        ->where('keyword', $keyword)->first();
+      if($news) {
+        return View::make('user.news')->with('news', $news);
+      }
+      else return View::make('errors.404');
+    }
+
+    public function abouts() {
+      return $this->about('gioi-thieu', 'gioi-thieu');
+    }
+
+    public function policies($keyword) {
+      return $this->about($keyword, 'chinh-sach');
+    }
+
+    public function recruits($keyword) {
+      return $this->about($keyword, 'tuyen-dung');
+    }
+
+    public function supports($keyword) {
+      return $this->about($keyword, 'ho-tro');
     }
 
     /**

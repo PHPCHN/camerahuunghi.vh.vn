@@ -7,6 +7,9 @@ CAMERA QUAN SÁT,
 @section('keywords')
 CAMERA QUAN SÁT,
 @endsection
+@section('css')
+<meta property="og:image" content="{{asset('asset/img/logo.png')}}" />
+@endsection
 @section('headcontent')
 @include('user.partial.headcontent')
 @endsection
