@@ -23,6 +23,14 @@
   }
 }
 
+.hidden-all {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper{
   padding: 0;
 }
@@ -276,6 +284,12 @@
 .product .item .description p {
   font-size: 12px;
   margin-bottom: 2px;
+  color: #00f;
+}
+
+.product .item .description p,
+.product .detail .description p {
+  color: #00f;
 }
 
 .product .item .p2 {
@@ -359,17 +373,17 @@
   font-weight: bold;
 }
 
-.product #description {
+.product #detail {
   padding-top: 15px;
 }
 
-.product #description .title {
+.product #detail .title {
   margin-top: 10px;
   text-align: center;
   border: 0;
 }
 
-.product #description p {
+.product #detail p {
   font-size: 16px;
 }
 
@@ -395,6 +409,10 @@
 .new .item img,
 .product .cart .img img {
   width: 100%;
+}
+
+.product-seen .item img {
+  margin-top: 10px;
 }
 
 .product-seen .item .name {
@@ -473,14 +491,21 @@
   color: #f58121;
 }
 
+.extra-title {
+  margin: 15px 0 1px 0;
+  padding: 5px 10px 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #f58121;
+}
+
 .extra {
-  margin-top: 15px;
   padding: 10px;
   background-color: #f58121;
 }
 
 .extra .marqueex {
-  //width: 100%;
   overflow: hidden;
   margin-bottom: 4px;
 }

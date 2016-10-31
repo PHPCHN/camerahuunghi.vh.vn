@@ -3,13 +3,19 @@
 $sup_cate = Session::get('sup_cate');
 $category = Session::get('category'); ?>
 @section('title')
-{{$category->name}} |
+{{$category->name}}
 @endsection
 @section('description')
-{{$category->name}},
+{{$category->name}}, Hệ thống camera, chống trộm giá rẻ tại Đà Nẵng, Lắp đặt nhanh, an toàn, hiệu quả
 @endsection
 @section('keywords')
-{{$category->name}},
+{{$category->name}}
+@endsection
+@section('og-image')
+{{asset('asset/img/logo.png')}}
+@endsection
+@section('canonical')
+{{asset('/'.$category->keyword)}}
 @endsection
 @section('headcontent')
 @if(Session::get('sub_cates')->count())
@@ -57,6 +63,9 @@ $category = Session::get('category'); ?>
 </div>
 @endsection
 @section('content')
+<h1 class="hidden-all">Camera Đà Nẵng, {{$category->name}}</h1>
+<h2 class="hidden-all">Camera Đà Nẵng</h2>
+<h3 class="hidden-all">Camera Đà Nẵng</h3>
 <div class="product row">
   <h6><a href="/">TRANG CHỦ</a>
     @if($sup_cate)

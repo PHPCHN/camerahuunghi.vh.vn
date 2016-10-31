@@ -1,18 +1,26 @@
 @extends('layout.user')
 @section('title')
-Tin tức |
+Camera Đà Nẵng | Tin tức
 @endsection
 @section('description')
-Tin tức,
+Tin tức, Hệ thống camera, chống trộm giá rẻ, Lắp đặt nhanh, an toàn, hiệu quả
 @endsection
 @section('keywords')
-Tin tức,
+Tin tức
 @endsection
-
+@section('og-image')
+{{asset('asset/img/logo.png')}}
+@endsection
+@section('canonical')
+{{asset('/tin-tuc')}}
+@endsection
 @section('headcontent')
 @include('user.partial.headcontent')
 @endsection
 @section('content')
+<h1 class="hidden-all">Camera Đà Nẵng, Tin tức</h1>
+<h2 class="hidden-all">Camera Đà Nẵng</h2>
+<h3 class="hidden-all">Camera Đà Nẵng</h3>
 <div class="new row">
   <h6>TIN TỨC - {{$news_all->getTotal()}} BÀI VIẾT</h6>
   <div class="col-xs-12">

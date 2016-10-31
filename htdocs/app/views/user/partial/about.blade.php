@@ -21,6 +21,7 @@
     <p class="h6">HỖ TRỢ KHÁCH HÀNG</p>
     <ul>
     <li><a href="/ho-tro-ky-thuat">Hỗ trợ kỹ thuật</a></li>
+    <li><a href="/ho-tro-kien-thuc-san-pham">Kiến thức sản phẩm</a></li>
     <li><a href="/ho-tro-tu-van-giai-phap-thiet-bi">Tư vấn giải pháp - thiết bị</a></li>
     <li><a href="/ho-tro-download-tai-lieu-phan-mem">Download tài liệu - phần mềm</a></li>
     </ul>

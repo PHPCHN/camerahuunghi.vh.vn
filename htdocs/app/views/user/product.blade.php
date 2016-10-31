@@ -3,16 +3,21 @@
       $category = Session::get('category');
       $product = Session::get('product'); ?>
 @section('title')
-{{$product->name}} |
+{{$product->name}}
 @endsection
 @section('description')
-{{$product->name}},
+{{$product->name}}, {{$sub_cate->name}},
+{{number_format($product->price,0,',','.')}} VND,
+Liên hệ 0987 926 117 - 0942 926 117
 @endsection
 @section('keywords')
-{{$product->name}},
+{{$product->name}}
 @endsection
-@section('css')
-
+@section('og-image')
+{{asset($product->image_link())}}
+@endsection
+@section('canonical')
+{{asset('/'.$category->keyword.'/'.$product->code)}}
 @endsection
 @section('headcontent')
 @endsection
@@ -46,26 +51,28 @@
   <div class="detail col-sm-6">
     <h1 class="title">{{$product->name}}</h1>
     <p class="price">Giá: <span class="price-sp">{{number_format($product->price,0,',','.')}} VND</span></p>
+    <div class="description">
     <p>Thương hiệu: {{$product->get_opt_th()}}</p>
     <?=$product->description ?>
+    </div>
     <p class="price contact">Liên hệ <span class="price-sp">0987 926 117 - 0942 926 117</span> để được tư vấn Miễn Phí - Hỗ trợ kỹ thuật và giao hàng trên toàn quốc</p>
   </div>
   <div class="detail-exp col-xs-12">
     <ul class="nav nav-tabs">
-      <li><a data-toggle="tab" href="#description">THÔNG TIN CHI TIẾT</a></li>
+      <li class="{{OrderFilter::has_back()?'':'active'}}"><a data-toggle="tab" href="#detail">THÔNG TIN CHI TIẾT</a></li>
       <li><a data-toggle="tab" href="#comment">BÌNH LUẬN</a></li>
-      <li class="active"><a data-toggle="tab" href="#order">ĐẶT MUA</a></li>
+      <li class="{{OrderFilter::has_back()?'active':''}}"><a data-toggle="tab" href="#order">ĐẶT MUA</a></li>
     </ul>
 
     <div class="tab-content">
-      <div id="description" class="tab-pane fade">
+      <div id="detail" class="tab-pane fade {{OrderFilter::has_back()?'':'in active'}}">
         <h3 class="title">{{$product->name}}</h3>
         <?=$product->content ?>
       </div>
       <div id="comment" class="tab-pane fade">
         <div class="fb-comments" data-href="{{asset($category->keyword.'/'.$product->code)}}" data-numposts="5" data-mobile="true"></div>
       </div>
-      <div id="order" class="tab-pane fade in active">
+      <div id="order" class="tab-pane fade {{OrderFilter::has_back()?'in active':''}}">
         @include('user.partial.order')
       </div>
     </div>

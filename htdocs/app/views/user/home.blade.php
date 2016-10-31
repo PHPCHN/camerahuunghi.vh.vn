@@ -1,19 +1,26 @@
 @extends('layout.user')
 @section('title')
+Camera Đà Nẵng | Nhà thầu điện nhẹ tại Đà Nẵng và Miền Trung
 @endsection
 @section('description')
-CAMERA QUAN SÁT,
+Camera Đà Nẵng, Camera quan sát, Hệ thống camera, chống trộm giá rẻ, Lắp đặt nhanh, an toàn, hiệu quả
 @endsection
 @section('keywords')
-CAMERA QUAN SÁT,
+Camera Đà Nẵng
 @endsection
-@section('css')
-<meta property="og:image" content="{{asset('asset/img/logo.png')}}" />
+@section('og-image')
+{{asset('asset/img/logo.png')}}
+@endsection
+@section('canonical')
+{{asset('/')}}
 @endsection
 @section('headcontent')
 @include('user.partial.headcontent')
 @endsection
 @section('content')
+<h1 class="hidden-all">Camera Đà Nẵng</h1>
+<h2 class="hidden-all">Camera Đà Nẵng</h2>
+<h3 class="hidden-all">Camera Đà Nẵng</h3>
 <div class="product row">
   <h6><ul class="nav nav-tabs">
     <li class="main active"><a data-toggle="tab" href="#top_products">TOP BÁN CHẠY NHẤT</a></li>

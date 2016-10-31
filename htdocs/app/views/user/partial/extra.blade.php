@@ -1,3 +1,6 @@
+<div class="extra-title row">
+  ĐỐI TÁC KHÁCH HÀNG THƯỜNG XUYÊN
+</div>
 <div class="extra row">
   <?php
   $ex_imgs = array(

@@ -1,18 +1,25 @@
 @extends('layout.user')
 @section('title')
-Tin tức |
+{{$news->title}}
 @endsection
 @section('description')
-Tin tức,
+Camera Đà Nẵng, {{$news->title}}
 @endsection
 @section('keywords')
-Tin tức,
+{{$news->title}}
 @endsection
-
+@section('og-image')
+{{asset($news->image_link())}}
+@endsection
+@section('canonical')
+{{asset('/tin-tuc/'.$news->id)}}
+@endsection
 @section('headcontent')
-
 @endsection
 @section('content')
+<h1 class="hidden-all">{{$news->title}}</h1>
+<h2 class="hidden-all">Camera Đà Nẵng</h2>
+<h3 class="hidden-all">Camera Đà Nẵng</h3>
 <div class="new row">
   <h6>TIN TỨC</h6>
   <div class="row">

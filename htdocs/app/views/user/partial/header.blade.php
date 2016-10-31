@@ -10,7 +10,7 @@
         <img alt="fb-icon" src="{{asset('asset/img/fb-icon.png')}}"></a>
       <a href="#">
         <img alt="tw-icon" src="{{asset('asset/img/tw-icon.png')}}"></a>
-      <a href="https://plus.google.com/117115317172514449488?rel=author" target="_blank">
+      <a href="https://plus.google.com/116259468793955512786" target="_blank">
         <img alt="gg-icon" src="{{asset('asset/img/gg-icon.png')}}"></a>
     </div>
   </div>

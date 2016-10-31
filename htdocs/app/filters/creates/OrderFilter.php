@@ -32,4 +32,11 @@ class OrderFilter extends BaseFilter {
       });
     }
   }
+
+  public static function has_back() {
+    return Session::has('flash_success')
+        || Session::has('flash_info')
+        || Session::has('flash_error')
+        || Session::has('flash_error_valid');
+  }
 }

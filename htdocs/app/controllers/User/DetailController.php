@@ -54,7 +54,7 @@ class DetailController extends BaseUserController
         ->whereIn('keyword', News::$about())
         ->where('keyword', $keyword)->first();
       if($news) {
-        return View::make('user.news')->with('news', $news);
+        return View::make('user.about')->with('news', $news);
       }
       else return View::make('errors.404');
     }

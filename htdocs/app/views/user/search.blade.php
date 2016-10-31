@@ -1,15 +1,20 @@
 @extends('layout.user')
 <?php $input_opts = Session::get('input_opts') ?>
 @section('title')
-Tìm kiếm |
+Camera Đà Nẵng | Tìm kiếm
 @endsection
 @section('description')
-Tìm kiếm,
+Kết quả tìm kiếm với từ khoá {{$input_opts['search']}}, Hệ thống camera, chống trộm giá rẻ tại Đà Nẵng
 @endsection
 @section('keywords')
-{{$input_opts['search']}},
+{{$input_opts['search']}}
 @endsection
-
+@section('og-image')
+{{asset('asset/img/logo.png')}}
+@endsection
+@section('canonical')
+{{asset('/search/?search='.$input_opts['search'])}}
+@endsection
 @section('headcontent')
 <div class="navbar-collapse" id="opt-menu">
   <form method="get">
@@ -48,6 +53,9 @@ Tìm kiếm,
 </div>
 @endsection
 @section('content')
+<h1 class="hidden-all">Camera Đà Nẵng, Tìm kiếm</h1>
+<h2 class="hidden-all">Camera Đà Nẵng</h2>
+<h3 class="hidden-all">Camera Đà Nẵng</h3>
 <div class="product row">
   <h6>TÌM KIẾM - {{$products->getTotal()}} KẾT QUẢ</h6>
   <div class="col-xs-12">

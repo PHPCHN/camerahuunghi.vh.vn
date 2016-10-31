@@ -9,7 +9,7 @@ class BaseUserController extends BaseController
     public function __construct()
     {
         $column = ['id', 'title', 'description', 'image', 'created_at'];
-        $news_list = News::select($column)
+        $news_list = News::select($column)->whereNull('keyword')
             ->orderBy('updated_at', 'desc')
             ->take(10)->get();
         Session::flash('news_list', $news_list);

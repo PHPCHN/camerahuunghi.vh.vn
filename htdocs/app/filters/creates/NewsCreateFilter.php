@@ -4,6 +4,6 @@ class NewsCreateFilter extends BaseFilter {
     'title' => 'required',
     'description' => 'required',
     'content' => 'required',
-    'image' => 'required|image',
+    'image' => 'image',
   ];
 }
