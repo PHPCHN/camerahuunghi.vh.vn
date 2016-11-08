@@ -1,29 +1,29 @@
 @extends('layout.user')
 @section('title')
-Camera Đà Nẵng | Nhà thầu điện nhẹ tại Đà Nẵng và Miền Trung
+Camera Đà Nẵng | CÔNG TY PHÂN PHỐI LẮP ĐẶT CAMERA HÀNG ĐẦU
 @endsection
 @section('description')
-Camera Đà Nẵng, Camera quan sát, Hệ thống camera, chống trộm giá rẻ, Lắp đặt nhanh, an toàn, hiệu quả
+Camera Đà Nẵng | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung | Nhà thầu hệ thống an ninh hàng đầu | Với đội ngũ kỹ thuật tay nghề cao
 @endsection
 @section('keywords')
-Camera Đà Nẵng
+Camera Đà Nẵng, nhà thầu camera tại Đà Nẵng, phân phối camera miền trung, máy báo trộm, camera KBVISION
 @endsection
 @section('og-image')
 {{asset('asset/img/logo.png')}}
-@endsection
-@section('canonical')
-{{asset('/')}}
 @endsection
 @section('headcontent')
 @include('user.partial.headcontent')
 @endsection
 @section('content')
 <h1 class="hidden-all">Camera Đà Nẵng</h1>
-<h2 class="hidden-all">Camera Đà Nẵng</h2>
-<h3 class="hidden-all">Camera Đà Nẵng</h3>
+<h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
+<h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="product row">
   <h6><ul class="nav nav-tabs">
     <li class="main active"><a data-toggle="tab" href="#top_products">TOP BÁN CHẠY NHẤT</a></li>
+    <li class=""><a data-toggle="tab" href="#projects">CÔNG TRÌNH</a></li>
+    <li class=""><a data-toggle="tab" href="#during_projects">CÔNG TRÌNH ĐANG THI CÔNG</a></li>
+    <li class=""><a data-toggle="tab" href="#top_projects">CÔNG TRÌNH TIÊU BIỂU</a></li>
   </ul></h6>
   <div class="tab-content">
     <div id="top_products" class="tab-pane fade in active">
@@ -41,16 +41,20 @@ Camera Đà Nẵng
         <div class="img">
           <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
         </div>
-        <p>{{$product->name}}<p>
-        <p class="code">{{$product->code}}</p>
-        <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+        <div class="cont">
+          <div class="cont-abs">
+            <p>{{$product->name}}</p>
+            <p class="code">{{$product->code}}</p>
+            <p class="price">{{$product->price_label()}}</p>
+          </div>
+        </div>
         <form method="get" class="exp" action="/{{$product->link}}">
         <button type="submit" class="btn btn-warning">Chi tiết</button>
         </form>
       </div>
       <div class="p2 row">
         <p class="code">{{$product->code}}</p>
-        <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+        <p class="price">{{$product->price_label()}}</p>
         <div class="description"><?=$product->description ?></div>
         <form method="get" class="exp" action="/{{$product->link}}">
         <button type="submit" class="btn btn-warning">Chi tiết</button>
@@ -58,6 +62,12 @@ Camera Đà Nẵng
       </div>
     </div>
     @endforeach
+    </div>
+    <div id="projects" class="tab-pane fade">
+    </div>
+    <div id="during_projects" class="tab-pane fade">
+    </div>
+    <div id="top_projects" class="tab-pane fade">
     </div>
   </div>
 </div>
@@ -89,16 +99,20 @@ Camera Đà Nẵng
         <div class="img">
           <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
         </div>
-        <p>{{$product->name}}<p>
-        <p class="code">{{$product->code}}</p>
-        <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+        <div class="cont">
+          <div class="cont-abs">
+            <p>{{$product->name}}</p>
+            <p class="code">{{$product->code}}</p>
+            <p class="price">{{$product->price_label()}}</p>
+          </div>
+        </div>
         <form method="get" class="exp" action="/{{$product->link}}">
         <button type="submit" class="btn btn-warning">Chi tiết</button>
         </form>
       </div>
       <div class="p2 row">
         <p class="code">{{$product->code}}</p>
-        <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+        <p class="price">{{$product->price_label()}}</p>
         <div class="description"><?=$product->description ?></div>
         <form method="get" class="exp" action="/{{$product->link}}">
         <button type="submit" class="btn btn-warning">Chi tiết</button>
@@ -126,16 +140,20 @@ Camera Đà Nẵng
             <div class="img">
               <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
             </div>
-            <p>{{$product->name}}<p>
-            <p class="code">{{$product->code}}</p>
-            <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+            <div class="cont">
+              <div class="cont-abs">
+                <p>{{$product->name}}</p>
+                <p class="code">{{$product->code}}</p>
+                <p class="price">{{$product->price_label()}}</p>
+              </div>
+            </div>
             <form method="get" class="exp" action="/{{$product->link}}">
             <button type="submit" class="btn btn-warning">Chi tiết</button>
             </form>
           </div>
           <div class="p2 row">
             <p class="code">{{$product->code}}</p>
-            <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+            <p class="price">{{$product->price_label()}}</p>
             <div class="description"><?=$product->description ?></div>
             <form method="get" class="exp" action="/{{$product->link}}">
             <button type="submit" class="btn btn-warning">Chi tiết</button>
@@ -154,11 +172,4 @@ Camera Đà Nẵng
 @endsection
 @section('extra')
 @include('user.partial.extra')
-@endsection
-@section('js')
-  @if(Session::has('search'))
-    <script>
-    alert("search={{Session::get('search')}}")
-    </script>
-  @endif
 @endsection

@@ -41,7 +41,8 @@ class DetailController extends BaseUserController
     }
 
     public function news($id) {
-      $news = News::select(News::column())->whereNull('keyword')->find($id);
+      $news = News::select(News::column())
+        ->where('keyword', 'like', '%tin-tuc%')->find($id);
       if($news) {
         return View::make('user.news')->with('news', $news);
       }
@@ -73,6 +74,61 @@ class DetailController extends BaseUserController
 
     public function supports($keyword) {
       return $this->about($keyword, 'ho-tro');
+    }
+
+    private function support_s($keyword, $view, $id=null) {
+      if($id) {
+        $news = News::select(News::column())
+          ->where('keyword', 'like', '%'.$keyword.'%')
+          ->find($id);
+        if($news) {
+          return View::make('user.'.$view)->with('news', $news);
+        }
+        else return View::make('errors.404');
+      }
+      else {
+        $news = News::select(News::column())
+          ->where('keyword', 'like', '%'.$keyword.'%')
+          ->orderBy('updated_at', 'desc')
+          ->paginate(News::PAGINATE);
+        return View::make('user.'.$view)->with('news_all', $news);
+      }
+    }
+
+    public function support_products() {
+      return $this->support_s('kien-thuc', 'support_products');
+    }
+
+    public function support_product_detail($id) {
+      return $this->support_s('kien-thuc', 'news', $id);
+    }
+
+    public function support_solutions() {
+      return $this->support_s('giai-phap', 'support_solutions');
+    }
+
+    public function support_solution_detail($id) {
+      return $this->support_s('giai-phap', 'news', $id);
+    }
+
+    public function support_downloads() {
+      return $this->about('download', 'ho-tro');
+    }
+
+    public function sitemap() {
+      $sitemap = Seo::sitemap();
+      $content = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+      <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">";
+      foreach($sitemap as $loc => $priority) {
+        $content.="<url>
+          <loc>".asset($loc)."</loc>
+          <lastmod>".date('Y-m-d')."</lastmod>
+          <changefreq>daily</changefreq>
+          <priority>".$priority."</priority>
+        </url>";
+      }
+      $content.="</urlset>";
+      return Response::make($content)->header('Content-Type', 'text/xml');
     }
 
     /**

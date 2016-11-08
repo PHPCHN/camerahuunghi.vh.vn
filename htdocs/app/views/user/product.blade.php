@@ -6,20 +6,13 @@
 {{$product->name}}
 @endsection
 @section('description')
-{{$product->name}}, {{$sub_cate->name}},
-{{number_format($product->price,0,',','.')}} VND,
-Liên hệ 0987 926 117 - 0942 926 117
+{{$product->name}} | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
 @endsection
 @section('keywords')
 {{$product->name}}
 @endsection
 @section('og-image')
 {{asset($product->image_link())}}
-@endsection
-@section('canonical')
-{{asset('/'.$category->keyword.'/'.$product->code)}}
-@endsection
-@section('headcontent')
 @endsection
 @section('content')
 <div class="product row">
@@ -44,13 +37,12 @@ Liên hệ 0987 926 117 - 0942 926 117
     <div class="g-plus">
     <div class="g-plusone" data-size="medium"
     data-href="{{asset($category->keyword.'/'.$product->code)}}"></div></div>
-    <div id="fb-root"></div>
     <div class="fb-like" data-href="{{asset($category->keyword.'/'.$product->code)}}"
     data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
   </div>
   <div class="detail col-sm-6">
     <h1 class="title">{{$product->name}}</h1>
-    <p class="price">Giá: <span class="price-sp">{{number_format($product->price,0,',','.')}} VND</span></p>
+    <p class="price">Giá: <span class="price-sp">{{$product->price_label()}}</span></p>
     <div class="description">
     <p>Thương hiệu: {{$product->get_opt_th()}}</p>
     <?=$product->description ?>
@@ -66,7 +58,7 @@ Liên hệ 0987 926 117 - 0942 926 117
 
     <div class="tab-content">
       <div id="detail" class="tab-pane fade {{OrderFilter::has_back()?'':'in active'}}">
-        <h3 class="title">{{$product->name}}</h3>
+        <a href="/{{$category->keyword}}/{{$product->code}}"><h3 class="title">{{$product->name}}</h3></a>
         <?=$product->content ?>
       </div>
       <div id="comment" class="tab-pane fade">
@@ -95,9 +87,13 @@ Liên hệ 0987 926 117 - 0942 926 117
       <div class="img">
         <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
       </div>
-      <p>{{$product->name}}<p>
-      <p class="code">{{$product->code}}</p>
-      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <div class="cont">
+        <div class="cont-abs">
+          <p>{{$product->name}}<p>
+          <p class="code">{{$product->code}}</p>
+          <p class="price">{{$product->price_label()}}</p>
+        </div>
+      </div>
       <form method="get" class="exp"
       action="/{{$product->link}}">
       <button type="submit" class="btn btn-warning">Chi tiết</button>
@@ -105,7 +101,7 @@ Liên hệ 0987 926 117 - 0942 926 117
     </div>
     <div class="p2 row">
       <p class="code">{{$product->code}}</p>
-      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <p class="price">{{$product->price_label()}}</p>
       <div class="description"><?=$product->description ?></div>
       <form method="get" class="exp"
       action="/{{$product->link}}">
@@ -120,20 +116,5 @@ Liên hệ 0987 926 117 - 0942 926 117
 @include('user.partial.extra')
 @endsection
 @section('js')
-  @if(Session::has('search'))
-    <script>
-    alert("search={{Session::get('search')}}")
-    </script>
-  @endif
-  <script src="https://apis.google.com/js/platform.js" async defer>
-  {lang: 'vi'}
-  </script>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
   <script src="{{asset('asset/js/order.js')}}"></script>
 @endsection

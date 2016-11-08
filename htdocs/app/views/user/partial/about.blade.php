@@ -1,5 +1,5 @@
 <div class="about row">
-  <div class="item col-xs-6 col-sm-3">
+  <div class="item col-xs-12 col-sm-3">
     <p class="h6">GIỚI THIỆU VỀ CÔNG TY</p>
     <ul>
     <li><a href="/gioi-thieu">Giới thiệu</a></li>
@@ -21,12 +21,12 @@
     <p class="h6">HỖ TRỢ KHÁCH HÀNG</p>
     <ul>
     <li><a href="/ho-tro-ky-thuat">Hỗ trợ kỹ thuật</a></li>
-    <li><a href="/ho-tro-kien-thuc-san-pham">Kiến thức sản phẩm</a></li>
-    <li><a href="/ho-tro-tu-van-giai-phap-thiet-bi">Tư vấn giải pháp - thiết bị</a></li>
-    <li><a href="/ho-tro-download-tai-lieu-phan-mem">Download tài liệu - phần mềm</a></li>
+    <li><a href="/kien-thuc-san-pham">Kiến thức sản phẩm</a></li>
+    <li><a href="/tu-van-giai-phap-thiet-bi">Tư vấn giải pháp - thiết bị</a></li>
+    <li><a href="/download">Download tài liệu - phần mềm</a></li>
     </ul>
   </div>
-  <div class="item col-xs-6 col-sm-3">
+  <div class="item col-xs-12 col-sm-3">
     <p class="h6">THỐNG KÊ TRUY CẬP</p>
     <ul>
     <li>{{trans('messages.online')}}: {{Session::get('mechs')['online']}}</li>

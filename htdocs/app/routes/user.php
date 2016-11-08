@@ -5,6 +5,16 @@ Route::get('/', [
   'uses' => 'IndexController@index',
 ]);
 
+Route::get('pdt_udt', function(){
+  $pdt_udt = require 'pdt_udt.php';
+  return View::make('pdt_udt')->with('pdt_udt', $pdt_udt);
+});
+
+Route::get('sitemap.xml', [
+  'as' => 'user.sitemap',
+  'uses' => 'DetailController@sitemap',
+]);
+
 Route::get('gioi-thieu', [
   'as' => 'user.about',
   'uses' => 'DetailController@abouts',
@@ -23,6 +33,31 @@ Route::get('tuyen-{keyword}', [
 Route::get('ho-tro-{keyword}', [
   'as' => 'user.support',
   'uses' => 'DetailController@supports',
+]);
+
+Route::get('kien-thuc-san-pham', [
+  'as' => 'user.support.products',
+  'uses' => 'DetailController@support_products',
+]);
+
+Route::get('kien-thuc-san-pham/{id}', [
+  'as' => 'user.support.product.detail',
+  'uses' => 'DetailController@support_product_detail',
+]);
+
+Route::get('tu-van-giai-phap-thiet-bi', [
+  'as' => 'user.support.solutions',
+  'uses' => 'DetailController@support_solutions',
+]);
+
+Route::get('tu-van-giai-phap-thiet-bi/{id}', [
+  'as' => 'user.support.solution.detail',
+  'uses' => 'DetailController@support_solution_detail',
+]);
+
+Route::get('download', [
+  'as' => 'user.support.download',
+  'uses' => 'DetailController@support_downloads',
 ]);
 
 Route::get('search', [

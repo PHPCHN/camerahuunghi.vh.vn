@@ -26,4 +26,5 @@ return array(
   'update_success_products' => 'Đã cập nhập sản phẩm',
   'update_fail_products' => 'Không thể cập nhập sản phẩm',
   'validation_error' => 'Thông tin nhập vào không hợp lệ',
+  'price_cont' => 'Liên hệ',
 );

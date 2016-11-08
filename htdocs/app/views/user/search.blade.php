@@ -1,24 +1,23 @@
 @extends('layout.user')
 <?php $input_opts = Session::get('input_opts') ?>
 @section('title')
-Camera Đà Nẵng | Tìm kiếm
+Tìm kiếm | Camera Đà Nẵng
 @endsection
 @section('description')
-Kết quả tìm kiếm với từ khoá {{$input_opts['search']}}, Hệ thống camera, chống trộm giá rẻ tại Đà Nẵng
+Kết quả tìm kiếm {{isset($input_opts['search'])?'với từ khoá '.$input_opts['search']:''}} | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
 @endsection
 @section('keywords')
-{{$input_opts['search']}}
+{{isset($input_opts['search'])?$input_opts['search']:'search'}}
 @endsection
 @section('og-image')
 {{asset('asset/img/logo.png')}}
 @endsection
-@section('canonical')
-{{asset('/search/?search='.$input_opts['search'])}}
-@endsection
 @section('headcontent')
 <div class="navbar-collapse" id="opt-menu">
   <form method="get">
+    @if(isset($input_opts['search']))
     <input type="hidden" name="search" value="{{$input_opts['search']}}">
+    @endif
     <ul class="nav navbar-nav">
       @foreach (Session::get('options') as $option)
       <li class="item">
@@ -53,9 +52,9 @@ Kết quả tìm kiếm với từ khoá {{$input_opts['search']}}, Hệ thống
 </div>
 @endsection
 @section('content')
-<h1 class="hidden-all">Camera Đà Nẵng, Tìm kiếm</h1>
-<h2 class="hidden-all">Camera Đà Nẵng</h2>
-<h3 class="hidden-all">Camera Đà Nẵng</h3>
+<h1 class="hidden-all">Tìm kiếm | Camera Đà Nẵng</h1>
+<h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
+<h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="product row">
   <h6>TÌM KIẾM - {{$products->getTotal()}} KẾT QUẢ</h6>
   <div class="col-xs-12">
@@ -75,9 +74,13 @@ Kết quả tìm kiếm với từ khoá {{$input_opts['search']}}, Hệ thống
       <div class="img">
         <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
       </div>
-      <p>{{$product->name}}<p>
-      <p class="code">{{$product->code}}</p>
-      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <div class="cont">
+        <div class="cont-abs">
+          <p>{{$product->name}}</p>
+          <p class="code">{{$product->code}}</p>
+          <p class="price">{{$product->price_label()}}</p>
+        </div>
+      </div>
       <form method="get" class="exp"
       action="/{{$product->link}}">
       <button type="submit" class="btn btn-warning">Chi tiết</button>
@@ -85,7 +88,7 @@ Kết quả tìm kiếm với từ khoá {{$input_opts['search']}}, Hệ thống
     </div>
     <div class="p2 row">
       <p class="code">{{$product->code}}</p>
-      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <p class="price">{{$product->price_label()}}</p>
       <div class="description"><?=$product->description ?></div>
       <form method="get" class="exp"
       action="/{{$product->link}}">
@@ -101,11 +104,4 @@ Kết quả tìm kiếm với từ khoá {{$input_opts['search']}}, Hệ thống
 @endsection
 @section('extra')
 @include('user.partial.extra')
-@endsection
-@section('js')
-  @if(Session::has('search'))
-    <script>
-    alert("search={{Session::get('search')}}")
-    </script>
-  @endif
 @endsection

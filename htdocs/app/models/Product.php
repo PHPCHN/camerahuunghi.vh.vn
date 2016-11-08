@@ -76,7 +76,9 @@ class Product extends Model
       $home_categories = Category::listfor_homes();
       $home_products['categories'] = $home_categories;
       $products = self::select($column)
-          ->whereRaw('(top + home + tab) > 0')->get();
+          ->whereRaw('(top + home + tab) > 0')
+          ->orderBy('price')
+          ->get();
       foreach($products as $product) {
         $cate = $home_categories[$product->cate_id];
         if($cate->sup_id > 0)
@@ -307,6 +309,12 @@ class Product extends Model
       foreach($products as $product)
         $product->link = $link_keys[$product->cate_id].'/'.$product->code;
       return $products;
+    }
+
+    public function price_label() {
+      if($this->price > 0)
+        return number_format($this->price,0,',','.'). ' VND';
+      else return trans('messages.price_cont');
     }
 
     public function image_link() {

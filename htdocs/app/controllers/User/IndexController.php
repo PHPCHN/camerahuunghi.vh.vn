@@ -50,7 +50,7 @@ class IndexController extends BaseUserController
     public function news()
     {
       $column = ['id', 'title', 'description', 'image', 'created_at'];
-      $news_all = News::select($column)->whereNull('keyword')
+      $news_all = News::select($column)->where('keyword', 'like', '%tin-tuc%')
           ->orderBy('updated_at', 'desc')
           ->paginate(News::PAGINATE);
       return View::make('user.newsall')->with('news_all', $news_all);

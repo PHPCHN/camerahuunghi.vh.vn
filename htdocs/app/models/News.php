@@ -43,7 +43,7 @@ class News extends Model
         'ky-thuat',
         'kien-thuc-san-pham',
         'tu-van-giai-phap-thiet-bi',
-        'download-tai-lieu-phan-mem',
+        'download',
       ];
     }
 

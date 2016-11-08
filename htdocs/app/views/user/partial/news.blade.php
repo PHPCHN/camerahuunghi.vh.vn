@@ -17,9 +17,9 @@
         </div>
       </div>
       <div class="detail col-xs-6 col-sm-8">
-        <p class="name">{{$product->name}}<p>
+        <p class="name">{{$product->name}}</p>
         <p class="code">{{$product->code}}</p>
-        <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+        <p class="price">{{$product->price_label()}}</p>
       </div>
     </div>
     </a>

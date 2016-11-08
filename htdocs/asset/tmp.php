@@ -109,3 +109,13 @@ $query->whereIn('id', function($query) use ($keys){
       });
   }
   });
+
+Độ phân giải 2.0 Megapixel
+
+Ống kính cố định 3,6mm cho góc nhìn lên đến 83°
+
+Tầm xa hồng ngoại 30m
+
+DC12V, IP67
+
+Môi trường làm việc từ -30°C~+60°C

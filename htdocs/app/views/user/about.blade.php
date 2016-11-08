@@ -3,23 +3,18 @@
 {{$news->title}}
 @endsection
 @section('description')
-Camera Đà Nẵng, {{$news->title}}
+{{$news->title}} | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
 @endsection
 @section('keywords')
 {{$news->title}}
 @endsection
 @section('og-image')
-{{asset($news->image_link())}}
-@endsection
-@section('canonical')
-{{asset('/tin-tuc/'.$news->id)}}
-@endsection
-@section('headcontent')
+{{asset('asset/img/logo.png')}}
 @endsection
 @section('content')
 <h1 class="hidden-all">{{$news->title}}</h1>
-<h2 class="hidden-all">Camera Đà Nẵng</h2>
-<h3 class="hidden-all">Camera Đà Nẵng</h3>
+<h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
+<h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="new row">
   <h6>{{$news->title}}</h6>
   <div class="row">
@@ -34,11 +29,4 @@ Camera Đà Nẵng, {{$news->title}}
 @endsection
 @section('extra')
 @include('user.partial.extra')
-@endsection
-@section('js')
-  @if(Session::has('search'))
-    <script>
-    alert("search={{Session::get('search')}}")
-    </script>
-  @endif
 @endsection

@@ -3,19 +3,16 @@
 $sup_cate = Session::get('sup_cate');
 $category = Session::get('category'); ?>
 @section('title')
-{{$category->name}}
+{{$category->name}} | Camera Đà Nẵng
 @endsection
 @section('description')
-{{$category->name}}, Hệ thống camera, chống trộm giá rẻ tại Đà Nẵng, Lắp đặt nhanh, an toàn, hiệu quả
+{{$category->name}} | Camera Đà Nẵng | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
 @endsection
 @section('keywords')
 {{$category->name}}
 @endsection
 @section('og-image')
 {{asset('asset/img/logo.png')}}
-@endsection
-@section('canonical')
-{{asset('/'.$category->keyword)}}
 @endsection
 @section('headcontent')
 @if(Session::get('sub_cates')->count())
@@ -63,9 +60,9 @@ $category = Session::get('category'); ?>
 </div>
 @endsection
 @section('content')
-<h1 class="hidden-all">Camera Đà Nẵng, {{$category->name}}</h1>
-<h2 class="hidden-all">Camera Đà Nẵng</h2>
-<h3 class="hidden-all">Camera Đà Nẵng</h3>
+<h1 class="hidden-all">{{$category->name}}, Camera Đà Nẵng</h1>
+<h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
+<h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="product row">
   <h6><a href="/">TRANG CHỦ</a>
     @if($sup_cate)
@@ -91,9 +88,13 @@ $category = Session::get('category'); ?>
       <div class="img">
         <img alt="{{$product->image}}" src="{{asset($product->image_link())}}" >
       </div>
-      <p>{{$product->name}}<p>
-      <p class="code">{{$product->code}}</p>
-      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <div class="cont">
+        <div class="cont-abs">
+          <p>{{$product->name}}</p>
+          <p class="code">{{$product->code}}</p>
+          <p class="price">{{$product->price_label()}}</p>
+        </div>
+      </div>
       <form method="get" class="exp"
       action="/{{$sup_cate?$sup_cate->keyword:$category->keyword}}/{{$product->code}}">
       <button type="submit" class="btn btn-warning">Chi tiết</button>
@@ -101,7 +102,7 @@ $category = Session::get('category'); ?>
     </div>
     <div class="p2 row">
       <p class="code">{{$product->code}}</p>
-      <p class="price">{{number_format($product->price,0,',','.')}} VND</p>
+      <p class="price">{{$product->price_label()}}</p>
       <div class="description"><?=$product->description ?></div>
       <form method="get" class="exp"
       action="/{{$sup_cate?$sup_cate->keyword:$category->keyword}}/{{$product->code}}">
@@ -117,11 +118,4 @@ $category = Session::get('category'); ?>
 @endsection
 @section('extra')
 @include('user.partial.extra')
-@endsection
-@section('js')
-  @if(Session::has('search'))
-    <script>
-    alert("search={{Session::get('search')}}")
-    </script>
-  @endif
 @endsection

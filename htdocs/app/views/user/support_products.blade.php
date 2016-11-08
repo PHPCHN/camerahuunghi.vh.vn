@@ -1,25 +1,22 @@
 @extends('layout.user')
 @section('title')
-Tin tức | Camera Đà Nẵng
+Kiến thức sản phẩm
 @endsection
 @section('description')
-Tin tức | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
+Kiến thức sản phẩm | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
 @endsection
 @section('keywords')
-Tin tức
+Kiến thức sản phẩm
 @endsection
 @section('og-image')
 {{asset('asset/img/logo.png')}}
 @endsection
-@section('headcontent')
-@include('user.partial.headcontent')
-@endsection
 @section('content')
-<h1 class="hidden-all">Tin tức, Camera Đà Nẵng</h1>
+<h1 class="hidden-all">Kiến thức sản phẩm</h1>
 <h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
 <h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="new row">
-  <h6>TIN TỨC - {{$news_all->getTotal()}} BÀI VIẾT</h6>
+  <h6>Kiến thức sản phẩm - {{$news_all->getTotal()}} bài viết</h6>
   <div class="col-xs-12">
   {{$news_all->links()}}
   </div>
@@ -27,7 +24,7 @@ Tin tức
   <div class="item">
     <div class="row">
       <div class="detail">
-        <a href="/tin-tuc/{{$news->id}}"><p class="title">{{$news->title}}</p></a>
+        <a href="/kien-thuc-san-pham/{{$news->id}}"><p class="title">{{$news->title}}</p></a>
       </div>
       <div class="img col-xs-6 col-sm-4">
         <img alt="{{$news->image}}" src="{{asset($news->image_link())}}" >
