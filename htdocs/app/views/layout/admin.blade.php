@@ -15,6 +15,7 @@
           </div>
         </div>
         @include('user.partial.footer')
+        @include('user.partial.extra-fixed')
       </div>
     </body>
     @yield('js')

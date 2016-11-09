@@ -14,6 +14,8 @@ class IndexController extends BaseUserController
         Session::flash('top_products', $top);
         Session::flash('main_products', $products);*/
         $home_products = Product::listfor_homes();
+        $home_projects = Project::listfor_homes();
+        Session::flash('home_projects', $home_projects);
         return View::make('user.home')->with('products', $home_products);
     }
 
@@ -54,6 +56,15 @@ class IndexController extends BaseUserController
           ->orderBy('updated_at', 'desc')
           ->paginate(News::PAGINATE);
       return View::make('user.newsall')->with('news_all', $news_all);
+    }
+
+    public function projects()
+    {
+      $column = ['id', 'name', 'description', 'image', 'created_at'];
+      $project_all = Project::select($column)
+          ->orderBy('updated_at', 'desc')
+          ->paginate(Project::PAGINATE);
+      return View::make('user.projectall')->with('project_all', $project_all);
     }
 
     /**

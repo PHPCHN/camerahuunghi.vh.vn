@@ -63,11 +63,60 @@ Camera Đà Nẵng, nhà thầu camera tại Đà Nẵng, phân phối camera mi
     </div>
     @endforeach
     </div>
+    <?php $home_projects = Session::get('home_projects'); ?>
     <div id="projects" class="tab-pane fade">
+      @foreach($home_projects['top'] as $project)
+      <div class="project item">
+        <div class="row">
+          <div class="detail">
+            <a href="/cong-trinh/{{$project->id}}"><p class="name">{{$project->name}}</p></a>
+          </div>
+          <div class="img-pj col-xs-6 col-sm-4">
+            <img alt="{{$project->image}}" src="{{asset($project->image_link())}}" >
+          </div>
+          <div class="detail">
+            <p class="description"><?=strip_tags($project->description) ?></p>
+            <p class="date">{{date_format($project->created_at, 'd/m/Y G:iA')}}</p>
+          </div>
+        </div>
+      </div>
+      @endforeach
+      <div class="more-pj">
+        <a href="/cong-trinh">Xem thêm</a>
+      </div>
     </div>
     <div id="during_projects" class="tab-pane fade">
+      @foreach($home_projects['dur'] as $project)
+      <div class="project item">
+        <div class="row">
+          <div class="detail">
+            <a href="/cong-trinh/{{$project->id}}"><p class="name">{{$project->name}}</p></a>
+          </div>
+          <div class="img-pj col-xs-6 col-sm-4">
+            <img alt="{{$project->image}}" src="{{asset($project->image_link())}}" >
+          </div>
+          <div class="detail">
+            <p class="description"><?=strip_tags($project->description) ?></p>
+            <p class="date">{{date_format($project->created_at, 'd/m/Y G:iA')}}</p>
+          </div>
+        </div>
+      </div>
+      @endforeach
     </div>
     <div id="top_projects" class="tab-pane fade">
+      @foreach ($home_projects['pro'] as $project)
+      <div class="project item col-sm-6">
+        <div class="row">
+          <div class="detail center">
+            <a href="/cong-trinh/{{$project->id}}"><p class="name">{{$project->name}}</p></a>
+          </div>
+          <div class="img-pj">
+            <a href="/cong-trinh/{{$project->id}}">
+              <img alt="{{$project->image}}" src="{{asset($project->image_link())}}" ></a>
+          </div>
+        </div>
+      </div>
+      @endforeach
     </div>
   </div>
 </div>

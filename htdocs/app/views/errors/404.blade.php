@@ -1,4 +1,4 @@
-@extends('layout.user')
+@extends('layout.admin')
 @section('title')
 CAMERA Đà Nẵng, Trang báo lỗi
 @endsection

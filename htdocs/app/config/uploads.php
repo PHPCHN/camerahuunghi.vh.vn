@@ -17,7 +17,7 @@ return [
     | Product Upload Folder
     |--------------------------------------------------------------------------
     |
-    | Storage path for upload Hotel images and documents
+    | Storage path for upload Product images and documents
     |
     */
     'product' => 'asset/img/product/',
@@ -27,7 +27,7 @@ return [
     | News Upload Folder
     |--------------------------------------------------------------------------
     |
-    | Storage path for upload Roomtype images and documents
+    | Storage path for upload News images and documents
     |
     */
     'news' => 'asset/img/news/',
@@ -37,10 +37,20 @@ return [
     | Slider room type Upload Folder
     |--------------------------------------------------------------------------
     |
-    | Storage path for upload Roomtype images and documents
+    | Storage path for upload Slider images and documents
     |
     */
     'slider' => 'asset/img/slider/',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Project room type Upload Folder
+    |--------------------------------------------------------------------------
+    |
+    | Storage path for upload Project images and documents
+    |
+    */
+    'project' => 'asset/img/project/',
 
     /*
     |--------------------------------------------------------------------------

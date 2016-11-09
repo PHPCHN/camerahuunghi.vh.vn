@@ -59,4 +59,21 @@ Route::group(['prefix' => 'admin'], function () {
   ]);
 
   Route::resource('news', 'NewsController');
+
+  Route::resource('project', 'ProjectController');
+
+  Route::post('project/{project}/top', [
+    'as' => 'admin.project.top',
+    'uses' => 'ProjectController@set_top',
+  ]);
+
+  Route::post('project/{project}/dur', [
+    'as' => 'admin.project.dur',
+    'uses' => 'ProjectController@set_dur',
+  ]);
+
+  Route::post('project/{project}/pro', [
+    'as' => 'admin.project.pro',
+    'uses' => 'ProjectController@set_pro',
+  ]);
 });

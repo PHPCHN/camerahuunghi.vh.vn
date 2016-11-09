@@ -7,6 +7,8 @@
     <tr><td>
     <a href="/admin/news">Quản lý Tin Tức</a></td></tr>
     <tr><td>
+    <a href="/admin/project">Quản lý Thông Tin Công Trình</a></td></tr>
+    <tr><td>
     <a href="/logout">Logout</a></td></tr>
   </table>
   @endif

@@ -75,6 +75,16 @@ Route::post('dat-hang', [
   'uses' => 'OrderController@order',
 ]);
 
+Route::get('cong-trinh', [
+  'as' => 'user.projectall',
+  'uses' => 'IndexController@projects',
+]);
+
+Route::get('cong-trinh/{project}', [
+  'as' => 'user.project',
+  'uses' => 'DetailController@project',
+]);
+
 Route::get('tin-tuc', [
   'as' => 'user.newsall',
   'uses' => 'IndexController@news',

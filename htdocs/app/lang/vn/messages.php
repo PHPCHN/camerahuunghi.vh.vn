@@ -25,6 +25,12 @@ return array(
   'create_fail_products' => 'Không thể thêm sản phẩm',
   'update_success_products' => 'Đã cập nhập sản phẩm',
   'update_fail_products' => 'Không thể cập nhập sản phẩm',
+  'update_full_products' => 'Đã đủ số lượng',
+  'create_success_projects' => 'Đã thêm công trình',
+  'create_fail_projects' => 'Không thể thêm công trình',
+  'update_success_projects' => 'Đã cập nhập công trình',
+  'update_fail_projects' => 'Không thể cập nhập công trình',
+  'update_full_projects' => 'Đã đủ số lượng',
   'validation_error' => 'Thông tin nhập vào không hợp lệ',
   'price_cont' => 'Liên hệ',
 );

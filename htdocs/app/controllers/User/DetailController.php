@@ -49,6 +49,18 @@ class DetailController extends BaseUserController
       else return View::make('errors.404');
     }
 
+    public function project($id) {
+      $column = Project::column();
+      $column[] = 'content';
+      $column[] = 'created_at';
+      $project = Project::select($column)
+        ->find($id);
+      if($project) {
+        return View::make('user.project')->with('project', $project);
+      }
+      else return View::make('errors.404');
+    }
+
     private function about($keyword, $type) {
       $about = News::const_about()[$type];
       $news = News::select(News::column())

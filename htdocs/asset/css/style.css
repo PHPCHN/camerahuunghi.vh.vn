@@ -27,7 +27,7 @@
   }
 }
 
-.hidden-all {
+.hidden-all, .hidden-all p, .hidden-all img {
   visibility: hidden;
   width: 0;
   height: 0;
@@ -311,7 +311,8 @@
 
 .product .item .code,
 .product-seen .item .code,
-.new .item .title {
+.new .item .title,
+.project .name {
   font-weight: bold;
   color: #0065b2;
 }
@@ -478,6 +479,16 @@
   border-color: #a94442;
 }
 
+#projects .more-pj {
+  text-align: right;
+}
+
+.project .row {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .news {
   top: auto !important;
 }
@@ -494,33 +505,41 @@
   border-bottom: 2px solid #f58121;
 }
 
-.new .item {
+.new .item,
+.project {
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
-.new .item:hover .title {
+.new .item:hover .title,
+.project:hover .name {
   color: #f58121;
 }
 
-.new .item .img {
+.new .item .img,
+.product .item .img-pj {
+  padding-left: 0;
   padding-right: 15px;
 }
 
-.new .item a {
+.new .item a,
+.project a {
   text-decoration: none;
 }
 
-.new .item .title {
+.new .item .title,
+.project .name {
   text-align: justify;
 }
 
-.new .item .description {
+.new .item .description,
+.project .description {
   color: #333333;
   text-align: justify;
 }
 
-.new .item .date {
+.new .item .date,
+.project .date {
   text-align: right;
   color: #f58121;
   font-size: 12px;
@@ -843,8 +862,9 @@
 }
 
 @media(min-width: 992px) {
-.product .col-md-2 {
-  width:20%;
+  .product .col-md-2 {
+    width:20%;
+  }
 }
 
 @media(min-width: 1200px) {

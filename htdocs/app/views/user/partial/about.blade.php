@@ -45,8 +45,8 @@
       'mb', 'scd', 'tech', 'vcom', 'vtin',
     );
   ?>
-  <image class="bkard" alt="bkard" src="{{asset('asset/img/bkard.png')}}">
+  <img class="bkard" alt="bkard" src="{{asset('asset/img/bkard.png')}}">
   @foreach($banks as $bank)
-    <image alt="{{$bank}}" src="{{asset('asset/img/'.$bank.'.png')}}">
+    <img alt="{{$bank}}" src="{{asset('asset/img/'.$bank.'.png')}}">
   @endforeach
 </div>
