@@ -107,12 +107,20 @@ class DetailController extends BaseUserController
       }
     }
 
+    public function promotions() {
+      return $this->support_s('khuyen-mai', 'promotions');
+    }
+
+    public function promotion_detail($id) {
+      return $this->support_s('khuyen-mai', 'promotion', $id);
+    }
+
     public function support_products() {
       return $this->support_s('kien-thuc', 'support_products');
     }
 
     public function support_product_detail($id) {
-      return $this->support_s('kien-thuc', 'news', $id);
+      return $this->support_s('kien-thuc', 'sp_pdt', $id);
     }
 
     public function support_solutions() {
@@ -120,7 +128,7 @@ class DetailController extends BaseUserController
     }
 
     public function support_solution_detail($id) {
-      return $this->support_s('giai-phap', 'news', $id);
+      return $this->support_s('giai-phap', 'sp_sln', $id);
     }
 
     public function support_downloads() {

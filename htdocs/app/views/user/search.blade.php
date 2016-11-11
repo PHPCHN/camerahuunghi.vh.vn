@@ -56,7 +56,8 @@ Kết quả tìm kiếm {{isset($input_opts['search'])?'với từ khoá '.$inpu
 <h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
 <h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="product row">
-  <h6>TÌM KIẾM - {{$products->getTotal()}} KẾT QUẢ</h6>
+  <h6><a href="/">TRANG CHỦ</a>
+    -> TÌM KIẾM - {{$products->getTotal()}} KẾT QUẢ</h6>
   <div class="col-xs-12">
   {{$products->appends($input_opts)->links()}}
   </div>

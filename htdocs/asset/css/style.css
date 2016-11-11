@@ -226,6 +226,22 @@
   border-bottom: 2px solid #f58121;
 }
 
+.product h6 a,
+.new h6 a,
+.new .more a,
+#projects .more-pj a{
+  text-decoration: none;
+  color: #0065b2;
+}
+
+.product h6 a:hover,
+.new h6 a:hover,
+.new .more a:hover,
+#projects .more-pj a:hover{
+  text-decoration: none;
+  color: #f58121;
+}
+
 .product .nav li a {
   color: #555;
   font-size: 13px;
@@ -563,6 +579,39 @@
 .new .item-detail .date {
   text-align: right;
   color: #f58121;
+}
+
+#top_projects {
+  margin-right: -5px;
+}
+
+#top_projects .project{
+  position: relative;
+  padding-left: 0;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  border: 0;
+}
+
+#top_projects .project .detail {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  background: linear-gradient(to right,
+    rgba(204,204,204,0), rgba(204,204,204,1), rgba(204,204,204,1));
+  width: 90%;
+}
+
+#top_projects .project .detail p {
+  width: 85%;
+  font-size: 12px;
+  float: right;
+  text-align: right;
+  margin: 2px;
+}
+
+#top_projects .project .img-pj{
+  padding-right: 0;
 }
 
 .extra-title {

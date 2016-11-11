@@ -51,6 +51,8 @@ class Seo extends Model
       $sitemap['/kien-thuc-san-pham'] = Config::get('sitemap.news');
       $sitemap['/tu-van-giai-phap-thiet-bi'] = Config::get('sitemap.news');
       $sitemap['/download'] = Config::get('sitemap.news-x');
+      $sitemap['/khuyen-mai'] = Config::get('sitemap.news');
+      $sitemap['/cong-trinh'] = Config::get('sitemap.news');
       $news = News::select(['id', 'keyword'])->get();
       foreach($news as $news_x) {
         if(strrpos($news_x->keyword, 'tin-tuc') !==false)
@@ -59,7 +61,12 @@ class Seo extends Model
           $sitemap['/kien-thuc-san-pham/'.$news_x->id] = Config::get('sitemap.news-x');
         if(strrpos($news_x->keyword, 'giai-phap') !==false)
           $sitemap['/tu-van-giai-phap-thiet-bi/'.$news_x->id] = Config::get('sitemap.news-x');
+        if(strrpos($news_x->keyword, 'khuyen-mai') !==false)
+          $sitemap['/khuyen-mai/'.$news_x->id] = Config::get('sitemap.news-x');
       }
+      $projects = Project::select(['id', 'name'])->get();
+      foreach($projects as $project)
+        $sitemap['/cong-trinh/'.$project->id] = Config::get('sitemap.news');
       return $sitemap;
     }
 }

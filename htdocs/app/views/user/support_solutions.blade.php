@@ -16,7 +16,8 @@ Tư vấn giải pháp - thiết bị
 <h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
 <h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="new row">
-  <h6>Tư vấn giải pháp - thiết bị - {{$news_all->getTotal()}} bài viết</h6>
+  <h6><a href="/">TRANG CHỦ</a>
+    -> Tư vấn giải pháp - thiết bị - {{$news_all->getTotal()}} bài viết</h6>
   <div class="col-xs-12">
   {{$news_all->links()}}
   </div>

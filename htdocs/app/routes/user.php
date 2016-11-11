@@ -55,6 +55,16 @@ Route::get('tu-van-giai-phap-thiet-bi/{id}', [
   'uses' => 'DetailController@support_solution_detail',
 ]);
 
+Route::get('khuyen-mai', [
+  'as' => 'user.promotions',
+  'uses' => 'DetailController@promotions',
+]);
+
+Route::get('khuyen-mai/{id}', [
+  'as' => 'user.promotion.detail',
+  'uses' => 'DetailController@promotion_detail',
+]);
+
 Route::get('download', [
   'as' => 'user.support.download',
   'uses' => 'DetailController@support_downloads',

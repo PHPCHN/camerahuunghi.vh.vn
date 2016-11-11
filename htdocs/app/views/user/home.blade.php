@@ -1,6 +1,6 @@
 @extends('layout.user')
 @section('title')
-Camera Đà Nẵng | CÔNG TY PHÂN PHỐI LẮP ĐẶT CAMERA HÀNG ĐẦU
+Camera Đà Nẵng | CÔNG TY PHÂN PHỐI LẮP ĐẶT CAMERA HÀNG ĐẦU ĐÀ NẴNG
 @endsection
 @section('description')
 Camera Đà Nẵng | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung | Nhà thầu hệ thống an ninh hàng đầu | Với đội ngũ kỹ thuật tay nghề cao

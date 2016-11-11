@@ -16,7 +16,8 @@ Giỏ hàng,
 <h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
 <h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="product row">
-  <h6>GIỎ HÀNG</h6>
+  <h6><a href="/">TRANG CHỦ</a>
+    -> GIỎ HÀNG</h6>
   @include('layout.partial.flash')
   <div class="col-xs-12">
     @include('user.partial.order')

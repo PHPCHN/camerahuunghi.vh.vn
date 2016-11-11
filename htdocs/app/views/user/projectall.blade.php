@@ -19,7 +19,8 @@ Công Trình
 <h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
 <h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="new row">
-  <h6>CÔNG TRÌNH - {{$project_all->getTotal()}} BÀI VIẾT</h6>
+  <h6><a href="/">TRANG CHỦ</a>
+    -> CÔNG TRÌNH - {{$project_all->getTotal()}} BÀI VIẾT</h6>
   <div class="col-xs-12">
   {{$project_all->links()}}
   </div>
