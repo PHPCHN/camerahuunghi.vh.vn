@@ -141,7 +141,7 @@
 
 #menu .item img {
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
   width: 30px;
   height: 20px;
   left: 0;
@@ -193,7 +193,8 @@
 }
 
 .content .col-left h3,
-.content .col-left .h6 {
+.content .col-left .h6,
+.prov .item a .h6 {
   color: #f58121;
   font-size: 16px;
   font-weight: bold;
@@ -203,12 +204,90 @@
   padding: 0;
 }
 
+.carousel.vertical .item {
+  -webkit-transition: 0.6s ease-in-out top;
+  -moz-transition:    0.6s ease-in-out top;
+  -ms-transition:     0.6s ease-in-out top;
+  -o-transition:      0.6s ease-in-out top;
+  left:               0;
+  background-color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: justify;
+}
+
+.carousel.vn1 .item,
+.carousel.vn2 .item {
+  padding: 0;
+}
+
+.prov .item a {
+  text-decoration: none;
+}
+
+.prov .item a .h7{
+  color: #0065b2;
+}
+
+.carousel.v0 {
+  position: relative;
+  height: 0;
+  padding-bottom: 79.2%;
+}
+
+.carousel.vn2 .carousel-inner {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.carousel.vn1 .carousel-inner {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+
+.carousel.vertical .active,
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+  top: 0;
+}
+
+.carousel-control.up {
+  top: 0;
+  left: auto;
+  width: 100%;
+  height: 15%;
+  background-image: linear-gradient(to top,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%)
+}
+
+.carousel-control.down {
+  top: auto;
+  bottom: 0;
+  right: auto;
+  width: 100%;
+  height: 15%;
+  background-image: linear-gradient(to bottom,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%)
+}
+
+.carousel-control.down .glyphicon {
+  top: auto;
+  bottom: 1px;
+  margin-left: -10px;
+  font-size: 20px;
+  position: absolute;
+}
+
 #myCarousel img {
   width: 100%;
 }
 
 #myCarousel .carousel-control {
   width: 5%;
+}
+
+.ads-bar img {
+  padding: 0;
 }
 
 #main-content {
@@ -527,7 +606,7 @@
   margin-bottom: 10px;
 }
 
-.new .item:hover .title,
+.new .item a:hover .title,
 .project:hover .name {
   color: #f58121;
 }
@@ -581,6 +660,27 @@
   color: #f58121;
 }
 
+.prov .item {
+  position: relative;
+  text-align: justify;
+}
+
+.prov .item a .h6 {
+  font-size: 14px;
+}
+
+.prov .prov-cities {
+  position: absolute;
+  right: 100%;
+  top: -10px;
+  width: 105%;
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 10px;
+  display: none;
+}
+
 #top_projects {
   margin-right: -5px;
 }
@@ -612,6 +712,31 @@
 
 #top_projects .project .img-pj{
   padding-right: 0;
+}
+
+.ads-news h6 {
+  border: 0;
+  color: #ff0;
+  background-color: #0065b2;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  margin-bottom: 0;
+}
+
+.ads-news .ads-mark {
+  position: absolute;
+  width: 27px;
+  top: 10px;
+  left: 0;
+}
+
+.ads-news .ads-mark img {
+  width: 100%;
+}
+
+.ads-news .img {
+  padding-right: 0 !important;
 }
 
 .extra-title {
@@ -794,6 +919,45 @@
   transform: scale(0.75,0.75);
 }
 
+.events {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.events .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0065b2;
+  opacity: 0.2;
+}
+
+.events img {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+}
+
+.events .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  opacity: 1;
+  color: #0065b2;
+}
+
+.events .close:hover {
+  color: #f58121;
+}
+
 @media(min-width: 768px) {
   .logo .img {
     bottom: -51px;
@@ -845,7 +1009,7 @@
   }
 
   #menu .search-box {
-    width: 36%;
+    //width: 36%;
   }
 
   .wrapper{
@@ -885,6 +1049,12 @@
     bottom: 0;
     right: 5%;
     width: 22.5%;
+  }
+
+  .prov .item:hover .prov-cities {
+    display: block;
+    background-color: #fff;
+    z-index: 10;
   }
 }
 

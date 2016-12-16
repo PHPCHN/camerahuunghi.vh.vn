@@ -61,13 +61,13 @@ class DetailController extends BaseUserController
       else return View::make('errors.404');
     }
 
-    private function about($keyword, $type) {
-      $about = News::const_about()[$type];
+    private function about($keyword, $type, $view='about') {
+      $about = News::const_about($type);
       $news = News::select(News::column())
-        ->whereIn('keyword', News::$about())
+        ->whereIn('keyword', $about)
         ->where('keyword', $keyword)->first();
       if($news) {
-        return View::make('user.about')->with('news', $news);
+        return View::make('user.'.$view)->with('news', $news);
       }
       else return View::make('errors.404');
     }
@@ -86,6 +86,16 @@ class DetailController extends BaseUserController
 
     public function supports($keyword) {
       return $this->about($keyword, 'ho-tro');
+    }
+
+    public function provs($keyword) {
+      return $this->about($keyword, 'cac-tinh');
+    }
+
+    public function prov_cities($prov, $keyword) {
+      if(in_array($prov, News::const_about('cac-tinh')))
+        return $this->about($keyword, $prov);
+      else return View::make('errors.404');
     }
 
     private function support_s($keyword, $view, $id=null) {
@@ -113,6 +123,14 @@ class DetailController extends BaseUserController
 
     public function promotion_detail($id) {
       return $this->support_s('khuyen-mai', 'promotion', $id);
+    }
+
+    public function ads() {
+      return $this->support_s('qc', 'ads_list');
+    }
+
+    public function ads_detail($id) {
+      return $this->support_s('qc', 'ads', $id);
     }
 
     public function support_products() {

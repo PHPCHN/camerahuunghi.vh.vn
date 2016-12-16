@@ -1,7 +1,7 @@
 @extends('layout.user')
 <?php $input_opts = Session::get('input_opts') ?>
 @section('title')
-Tìm kiếm | Camera Đà Nẵng
+Tìm kiếm | Camera Đà Nẵng
 @endsection
 @section('description')
 Kết quả tìm kiếm {{isset($input_opts['search'])?'với từ khoá '.$input_opts['search']:''}} | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung

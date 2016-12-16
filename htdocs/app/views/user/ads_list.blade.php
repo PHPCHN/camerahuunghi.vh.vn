@@ -1,12 +1,12 @@
 @extends('layout.user')
 @section('title')
-Tin tức | Camera Đà Nẵng
+QC | Camera Đà Nẵng
 @endsection
 @section('description')
-Tin tức | Camera Đà Nẵng | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
+QC | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
 @endsection
 @section('keywords')
-Tin tức
+Khuyến Mãi
 @endsection
 @section('og-image')
 {{asset('asset/img/logo.png')}}
@@ -15,12 +15,12 @@ Tin tức
 @include('user.partial.headcontent')
 @endsection
 @section('content')
-<h1 class="hidden-all">Tin tức, Camera Đà Nẵng</h1>
+<h1 class="hidden-all">QC, Camera Đà Nẵng</h1>
 <h2 class="hidden-all">Phân phối camera tại Đà Nẵng</h2>
 <h3 class="hidden-all">Nhà thầu hệ thống an ninh hàng đầu</h3>
 <div class="new row">
   <h6> <a href="/">TRANG CHỦ</a>
-    -> TIN TỨC - {{$news_all->getTotal()}} BÀI VIẾT</h6>
+    -> QC - {{$news_all->getTotal()}} BÀI VIẾT</h6>
   <div class="col-xs-12">
   {{$news_all->links()}}
   </div>
@@ -28,7 +28,7 @@ Tin tức
   <div class="item">
     <div class="row">
       <div class="detail">
-        <a href="/tin-tuc/{{$news->id}}"><p class="title">{{$news->title}}</p></a>
+        <a href="/qc/{{$news->id}}"><p class="title">{{$news->title}}</p></a>
       </div>
       <div class="img col-xs-6 col-sm-4">
         <img alt="{{$news->image}}" src="{{asset($news->image_link())}}" >

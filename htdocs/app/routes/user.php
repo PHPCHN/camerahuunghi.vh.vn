@@ -15,6 +15,16 @@ Route::get('sitemap.xml', [
   'uses' => 'DetailController@sitemap',
 ]);
 
+Route::get('lap-dat-camera-tai-{keyword}', [
+  'as' => 'user.provs',
+  'uses' => 'DetailController@provs',
+]);
+
+Route::get('lap-dat-camera-tai-{prov}/{keyword}', [
+  'as' => 'user.prov.cities',
+  'uses' => 'DetailController@prov_cities',
+]);
+
 Route::get('gioi-thieu', [
   'as' => 'user.about',
   'uses' => 'DetailController@abouts',
@@ -63,6 +73,16 @@ Route::get('khuyen-mai', [
 Route::get('khuyen-mai/{id}', [
   'as' => 'user.promotion.detail',
   'uses' => 'DetailController@promotion_detail',
+]);
+
+Route::get('qc', [
+  'as' => 'user.ads',
+  'uses' => 'DetailController@ads',
+]);
+
+Route::get('qc/{id}', [
+  'as' => 'user.ads.detail',
+  'uses' => 'DetailController@ads_detail',
 ]);
 
 Route::get('download', [

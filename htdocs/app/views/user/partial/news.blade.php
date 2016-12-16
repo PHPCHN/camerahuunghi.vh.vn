@@ -32,8 +32,14 @@
   <div class="more">
     <a href="/tin-tuc">Xem tất cả</a>
   </div>
-  @foreach (Session::get('news_list') as $news)
-  <div class="item">
+  <style id="vrc-style-vn1"></style>
+  <div class="carousel vertical vn1 slide" data-class="vn1" data-ride="carousel" data-pause="hover"
+  data-type="multi" data-limit="3" data-interval="2000" id="verCarousel-1">
+     <ol class="carousel-indicators">
+     </ol>
+     <div class="carousel-inner" role="listbox">
+  @foreach (Session::get('news_list') as $index => $news)
+  <div class="item {{$index==0?'active':''}}">
     <a href="/tin-tuc/{{$news->id}}">
     <div class="row">
       <div class="img col-xs-6 col-sm-4">
@@ -49,3 +55,11 @@
   </div>
   @endforeach
 </div>
+<a class="right down carousel-control" href="#verCarousel-1" role="button" data-slide="next">
+   <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+   <span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+@include('user.partial.ads-news')
+@include('user.partial.prov-news')

@@ -11,10 +11,11 @@ class OrderController extends BaseUserController
     public function order()
     {
       if(Input::has('sm_add'))
-        return $this->order_add();
+        $this->order_add();
       elseif(Input::has('sm_order'))
-        return $this->order_submit();
-      else return $this->order_rm();
+        $this->order_submit();
+      else $this->order_rm();
+      return Redirect::back();
     }
 
     private function in_cart($product)
@@ -29,24 +30,38 @@ class OrderController extends BaseUserController
       return $cart;
     }
 
+    private function cart_add()
+    {
+      if(Input::has('pdt')) {
+        $pdt = Input::get('pdt');
+        $ql = 1;
+        $product = Product::select(['id', 'name', 'image', 'code', 'price'])
+                    ->find($pdt);
+        if($product) {
+          $product->ql = $ql;
+          $cart = $this->in_cart($product);
+          if($cart !== null) {
+            $cart[] = $product;
+            Session::put('cart', $cart);
+            return 1;
+          }
+          else return 0;
+        }
+        else return -1;
+      }
+      else return -1;
+    }
+
     private function order_add()
     {
-      $pdt = Input::get('pdt');
-      $ql = 1;
-      $product = Product::select(['id', 'name', 'image', 'code', 'price'])
-                  ->find($pdt);
-      if($product) {
-        $product->ql = $ql;
-        $cart = $this->in_cart($product);
-        if($cart !== null) {
-          $cart[] = $product;
-          Session::put('cart', $cart);
-          Session::flash('flash_success', trans('messages.order_success_add'));
-        }
-        else Session::flash('flash_info', trans('messages.order_current_add'));
+      $cart_add = $this->card_add();
+      if($cart_add == 1) {
+        Session::flash('flash_success', trans('messages.order_success_add'));
+      }
+      else if($cart_add == 0) {
+        Session::flash('flash_info', trans('messages.order_current_add'));
       }
       else Session::flash('flash_error', trans('messages.order_fail_add'));
-      return Redirect::back();
     }
 
     private function cart_rm()
@@ -75,11 +90,11 @@ class OrderController extends BaseUserController
       else if($cart_rm == 0)
         Session::flash('flash_info', trans('messages.order_none_rm'));
       else Session::flash('flash_info', trans('messages.order_empty_rm'));
-      return Redirect::back();
     }
 
     private function order_submit()
     {
+      $this->cart_add();
       if(Session::has('cart')) {
         $cart = Session::get('cart');
         $cart_info = Session::get('cart_info');
@@ -107,7 +122,6 @@ class OrderController extends BaseUserController
       else Session::flash('flash_info', trans('messages.order_none'));
       Session::forget('cart_info');
       Session::forget('cart');
-      return Redirect::back();
     }
 
     private function add_cart_pdts($cart, $order_id)

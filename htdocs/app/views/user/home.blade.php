@@ -1,6 +1,6 @@
 @extends('layout.user')
 @section('title')
-Camera Đà Nẵng | CÔNG TY PHÂN PHỐI LẮP ĐẶT CAMERA HÀNG ĐẦU ĐÀ NẴNG
+Camera Đà Nẵng | CÔNG TY PHÂN PHỐI LẮP ĐẶT CAMERA HÀNG ĐẦU ĐÀ NẴNG
 @endsection
 @section('description')
 Camera Đà Nẵng | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung | Nhà thầu hệ thống an ninh hàng đầu | Với đội ngũ kỹ thuật tay nghề cao
@@ -221,4 +221,21 @@ Camera Đà Nẵng, nhà thầu camera tại Đà Nẵng, phân phối camera mi
 @endsection
 @section('extra')
 @include('user.partial.extra')
+@endsection
+@section('js')
+<div class="events">
+  <div class="back">
+  </div>
+  <a href="/camera" target="_blank">
+    <img alt="events" src="{{asset('asset/img/image10120.jpg')}}">
+  </a>
+  <div class="close">
+    <span class="glyphicon glyphicon-remove-circle"></span>
+  </div>
+</div>
+<script>
+  $('.events').on('click', function(){
+    $(this).hide();
+  });
+</script>
 @endsection

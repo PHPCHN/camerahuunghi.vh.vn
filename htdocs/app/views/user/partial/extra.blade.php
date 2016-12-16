@@ -17,6 +17,7 @@
       <img alt="{{$ex_img}}" src="{{asset('asset/img/'.$ex_img.'.png')}}">
     @endforeach
   </div>
+  <style></style>
   <script>
     $('.marquee').marquee({
       //speed in milliseconds of the marquee

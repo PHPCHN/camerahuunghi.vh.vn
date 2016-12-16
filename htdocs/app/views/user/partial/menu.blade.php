@@ -37,8 +37,14 @@
           <img alt="icon-rad" src="{{asset('asset/img/icon-rad.png')}}">
           BỘ ĐÀM</a></li>
         <li class="item"><a href="/chuong-cua" >
-          <img alt="icon-drb" src="{{asset('asset/img/icon-drb.png')}}">
+          <img alt="icon-dbll" src="{{asset('asset/img/icon-dbll.png')}}">
           CHUÔNG CỬA</a></li>
+        <li class="item"><a href="/cua-tu-dong" >
+          <img alt="icon-otodr" src="{{asset('asset/img/icon-otodr.png')}}">
+          CỬA TỰ ĐỘNG</a></li>
+        <li class="item"><a href="/ups" >
+          <img alt="icon-ups" src="{{asset('asset/img/icon-ups.png')}}">
+          UPS</a></li>
         <li class="item"><a href="/phu-kien" >
           <img alt="icon-acx" src="{{asset('asset/img/icon-acx.png')}}">
           PHỤ KIỆN</a></li>

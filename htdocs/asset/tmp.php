@@ -1,6 +1,23 @@
 {"error":{"number":1,"message":"The PHP installation does not meet the minimum system requirements for CKFinder. Missing PHP extensions: GD. Please refer to CKFinder documentation for more details."}}
 
+<!--iframe width="140" height="140" frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB1ZQbRSqjnQlYYaUYOtcs0erl0WB4TUtg
+    &q=Camera+Đại+Hữu+Nghị">
+</iframe-->
 
+#g-map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 80%;
+  margin-top: 15px;
+}
+
+#g-map .map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
 2.0Mp, zoom quang 30x, zoom số 16x
 
@@ -119,3 +136,25 @@ Tầm xa hồng ngoại 30m
 DC12V, IP67
 
 Môi trường làm việc từ -30°C~+60°C
+
+https://www.google.com/url?sa=t&rct=j&url=http%3A%2F%2Fdaihuunghi.vn%2F&source=maps&cd=1&usg=AFQjCNGRKCYLAAn9962N1vV2lRw2WFFHGw&sig2=3PpeettX4T5ykgZ3_RMRkw&ved=1t%3A3443%2Cp%3AiPg7WMDHMoTI0gTRhZq4Ag
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&ved=0ahUKEwivp7PYi8vQAhXCjJQKHd1gAJsQFghMMAQ&url=http%3A%2F%2Fcamera.0511.vn%2Ftin-tuc%2Fcon-mat-an-ninh-cua-thanh-pho%2Fcamera-toan-dan-giam-sat-an-ninh-thanh-pho-da-nang-25.html&usg=AFQjCNEiwcDjDcBnOSMuld41z_pkL03xRQ&sig2=lXSUP4yTg5XILwgH9lDfPw
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwivp7PYi8vQAhXCjJQKHd1gAJsQgU8IPjAC&url=http%3A%2F%2Fdaihuunghi.vn%2F&usg=AFQjCNGRKCYLAAn9962N1vV2lRw2WFFHGw&sig2=491xD3Gxf2cnEVkgu6WwFA
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=14&cad=rja&uact=8&ved=0ahUKEwjFytatg8vQAhXEUZQKHRtrAxs4ChAWCCswAw&url=http%3A%2F%2Fdaihuunghi.vn%2F&usg=AFQjCNGRKCYLAAn9962N1vV2lRw2WFFHGw&sig2=sdKR40LwXciujzDzCZKifQ
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=20&cad=rja&uact=8&ved=0ahUKEwiigJXB_MrQAhUHI5QKHeuoAUM4ChAWCE4wCQ&url=http%3A%2F%2Fdaihuunghi.vn%2Fdau-ghi%2FKX-7108TD4&usg=AFQjCNE6eZCGnzX8jRsahmTXmP54CiwD9A&sig2=hh5K8Yx4u6_tqynPrBSOqw
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjs7pu69MrQAhXKqo8KHe-DDmwQgU8ISTAC&url=http%3A%2F%2Fhighmarksecurity.com%2F&usg=AFQjCNFQU0BvPvo2lZidTqlHZglNIRvQ6g&sig2=zKDZEcK8MP6rZWgccm8T3g
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&cad=rja&uact=8&ved=0ahUKEwjs7pu69MrQAhXKqo8KHe-DDmwQFghoMAc&url=http%3A%2F%2Fhighmarksecurity.com%2F&usg=AFQjCNFQU0BvPvo2lZidTqlHZglNIRvQ6g&sig2=zKDZEcK8MP6rZWgccm8T3g
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwjs7pu69MrQAhXKqo8KHe-DDmwQgU8IUjAD&url=http%3A%2F%2Fdaihuunghi.vn%2F&usg=AFQjCNGRKCYLAAn9962N1vV2lRw2WFFHGw&sig2=1khCuXu8eoRmFm1MI9LxXg
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwiD_6L88srQAhUBso8KHd2dARUQFggpMAI&url=http%3A%2F%2Fdaihuunghi.vn%2F&usg=AFQjCNGRKCYLAAn9962N1vV2lRw2WFFHGw&sig2=3N3cwkRsdXwnWY8E-6UzVQ
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwirvozi7MrQAhUfTY8KHfkMD4AQFgg8MAI&url=http%3A%2F%2Fcameradanang.com%2F&usg=AFQjCNGqHeDGGEb5JvdWe-GLoeFJLLt7Ig&sig2=Idy6opmh02K0hC3H_DMuZA
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwirvozi7MrQAhUfTY8KHfkMD4AQFgg0MAE&url=http%3A%2F%2Fcamera.0511.vn%2Ftin-tuc%2Fcon-mat-an-ninh-cua-thanh-pho%2Fcamera-toan-dan-giam-sat-an-ninh-thanh-pho-da-nang-25.html&usg=AFQjCNEiwcDjDcBnOSMuld41z_pkL03xRQ&sig2=kKBsTASDkoCdVo5AAXEthw

@@ -52,6 +52,7 @@ class Seo extends Model
       $sitemap['/tu-van-giai-phap-thiet-bi'] = Config::get('sitemap.news');
       $sitemap['/download'] = Config::get('sitemap.news-x');
       $sitemap['/khuyen-mai'] = Config::get('sitemap.news');
+      $sitemap['/qc'] = Config::get('sitemap.news');
       $sitemap['/cong-trinh'] = Config::get('sitemap.news');
       $news = News::select(['id', 'keyword'])->get();
       foreach($news as $news_x) {
@@ -63,10 +64,20 @@ class Seo extends Model
           $sitemap['/tu-van-giai-phap-thiet-bi/'.$news_x->id] = Config::get('sitemap.news-x');
         if(strrpos($news_x->keyword, 'khuyen-mai') !==false)
           $sitemap['/khuyen-mai/'.$news_x->id] = Config::get('sitemap.news-x');
+        if(strrpos($news_x->keyword, 'qc') !==false)
+          $sitemap['/qc/'.$news_x->id] = Config::get('sitemap.news-x');
       }
       $projects = Project::select(['id', 'name'])->get();
       foreach($projects as $project)
-        $sitemap['/cong-trinh/'.$project->id] = Config::get('sitemap.news');
+        $sitemap['/cong-trinh/'.$project->id] = Config::get('sitemap.news-x');
+      $provs = News::const_about('cac-tinh');
+      foreach($provs as $prov) {
+        $sitemap['/lap-dat-camera-tai-'.$prov] = Config::get('sitemap.news-x');
+        $prov_cs = News::const_about($prov);
+        foreach($prov_cs as $prov_c) {
+          $sitemap['/lap-dat-camera-tai-'.$prov.'/'.$prov_c] = Config::get('sitemap.news-x');    
+        }
+      }
       return $sitemap;
     }
 }

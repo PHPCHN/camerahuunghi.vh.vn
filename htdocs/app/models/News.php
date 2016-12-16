@@ -6,45 +6,8 @@ class News extends Model
     const UPLOAD_KEY = 'news';
     const PAGINATE = 20;
 
-    public static function const_about() {
-      return [
-        'gioi-thieu' => 'const_abouts',
-        'chinh-sach' => 'const_policies',
-        'tuyen-dung' => 'const_recruits',
-        'ho-tro' => 'const_supports',
-      ];
-    }
-
-    public static function const_abouts() {
-      return [
-        'gioi-thieu',
-      ];
-    }
-
-    public static function const_policies() {
-      return [
-        'uu-dai',
-        'bao-hanh',
-        'van-chuyen',
-        'doi-tra-hang',
-        'bao-mat-thong-tin',
-      ];
-    }
-
-    public static function const_recruits() {
-      return [
-        'nhan-vien-marketing-online',
-        'nhan-vien-ky-thuat',
-      ];
-    }
-
-    public static function const_supports() {
-      return [
-        'ky-thuat',
-        'kien-thuc-san-pham',
-        'tu-van-giai-phap-thiet-bi',
-        'download',
-      ];
+    public static function const_about($about) {
+      return Config::get('news.'.$about);
     }
 
     /**

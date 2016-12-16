@@ -3,7 +3,7 @@
 Giỏ hàng | Camera Đà Nẵng
 @endsection
 @section('description')
-Giỏ hàng | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
+Giỏ hàng | Camera Đà Nẵng | Công ty phân phối lắp đặt Camera tại Đà Nẵng | Miền Trung
 @endsection
 @section('keywords')
 Giỏ hàng,

@@ -1,6 +1,31 @@
 <div class="content row">
-  <div class="col-left col-sm-3">
-    <p class="h6">Ý KIẾN KHÁCH HÀNG</p>
+  <div class="col-left col-sm-3" style="padding:0;">
+    <style>
+      .gsc-control-cse {
+        padding: 5px;
+        padding-top: 3px;
+        padding-bottom: 0;
+      }
+
+      table.gsc-search-box {
+        margin: 9px;
+      }
+    </style>
+    <script>
+  (function() {
+    var cx = '011656159394121501197:w8eaivo40ya';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+<a href="/camera" target="_blank">
+  <img alt="events" src="{{asset('asset/img/image43542.jpg')}}" width="100%">
+</a>
   </div>
   <div class="col-right col-sm-9 hidden-xs">
     <div class="carousel slide" data-ride="carousel" id="myCarousel">
@@ -25,3 +50,4 @@
     </div>
   </div>
 </div>
+@include('user.partial.ads-bar')
